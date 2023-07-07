@@ -121,7 +121,7 @@ fox_enc_close(&fox);
 ```
 
 ### Decoding
-To decode an image, first open the stream read size hint.
+To decode an image, first open the stream and read size hint.
 ```c
 fox_size_t image_size = fox_dec_open(&fox, &stream);
 ```
