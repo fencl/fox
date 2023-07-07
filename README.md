@@ -1,0 +1,2 @@
+# fox
+Lossless image format
