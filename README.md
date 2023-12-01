@@ -2,6 +2,8 @@
 Lossless image format
 
 Fox is a lossless image format aiming to provide a satisfying compression ratio with a tiny encoder/decoder.
+Fox bitstream encodes a stream of 8bit rgba pixels, no additional information is included.
+This makes fox a good choice for embeding into custom formats.
 
 ## Tiny
 Both reference encoder and decoder are currenty written in under 80 LOC.
@@ -16,7 +18,7 @@ Actuall numbers comming soon...
 
 ## Space complexity
 Fox compresses images in a streaming fashion with O(1) space complexity (acually < 2k bytes).
-This means that there is effectively no limit on the image size (width and height hints are encoded 32 bits, so technically there is a limit but it can be ignored).
+This means that there is effectively no limit on the image size.
 
 ## Time complexity
 There is no guesswork involved, each pixel is encoded in O(1) time. Therefore the whole image is encoded in O(n) time.
@@ -91,9 +93,9 @@ my_stream_t stream = {
 ```
 
 ### Encoding
-To encode an image, first open the stream and provide width and height hint.
+To encode an image, first open the stream.
 ```c
-fox_enc_open(&fox, &stream, (fox_size_t) { width, height });
+fox_enc_open(&fox, &stream);
 ```
 
 Then for each pixel
@@ -121,9 +123,9 @@ fox_enc_close(&fox);
 ```
 
 ### Decoding
-To decode an image, first open the stream read size hint.
+To decode an image, first open the stream.
 ```c
-fox_size_t image_size = fox_dec_open(&fox, &stream);
+fox_dec_open(&fox, &stream);
 ```
 For each pixel
 ```c

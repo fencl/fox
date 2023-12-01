@@ -27,13 +27,11 @@ typedef struct fox_coder {
     fox_u8_t      model[0x4FC];
 } fox_coder_t;
 
-typedef struct fox_size { fox_u32_t w, h; } fox_size_t;
-
-void fox_enc_open(fox_coder_t *enc, fox_stream_t *stream, fox_size_t size);
+void fox_enc_open(fox_coder_t *enc, fox_stream_t *stream);
 void fox_enc_write(fox_coder_t *enc, fox_color_t color);
 void fox_enc_close(fox_coder_t *enc);
 
-fox_size_t fox_dec_open(fox_coder_t *dec, fox_stream_t *stream);
+void fox_dec_open(fox_coder_t *dec, fox_stream_t *stream);
 fox_color_t fox_dec_read(fox_coder_t *dec);
 
 #endif

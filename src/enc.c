@@ -4,10 +4,7 @@ static inline void fox_enc_u32(fox_stream_t *stream, fox_u32_t v) {
     for (fox_u8_t i = 0; i < 4; ++i) stream->write(stream, v & 0xFF), v >>= 8;
 }
 
-void fox_enc_open(fox_coder_t *enc, fox_stream_t *stream, fox_size_t size) {
-    fox_enc_u32(stream, size.w);
-    fox_enc_u32(stream, size.h);
-
+void fox_enc_open(fox_coder_t *enc, fox_stream_t *stream) {
     enc->stream     = stream;
     enc->color.argb = 0xFF000000;
     enc->lower      = 0x00000000;

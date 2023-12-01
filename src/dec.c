@@ -30,15 +30,7 @@ static fox_u32_t fox_dec_rc(fox_coder_t *dec, fox_u32_t ctx, fox_u8_t len) {
     return sym;
 }
 
-static inline void fox_dec_u32(fox_stream_t *stream, fox_u32_t *v) {
-    for (fox_u8_t i = 0; i < 4; ++i) *v |= stream->read(stream) << (i << 3);
-}
-
-fox_size_t fox_dec_open(fox_coder_t *dec, fox_stream_t *stream) {
-    fox_size_t size = { 0, 0 };
-    fox_dec_u32(stream, &size.w);
-    fox_dec_u32(stream, &size.h);
-
+void fox_dec_open(fox_coder_t *dec, fox_stream_t *stream) {
     dec->stream     = stream;
     dec->color.argb = 0xFF000000;
     dec->range      = 0x00000000;
@@ -49,7 +41,6 @@ fox_size_t fox_dec_open(fox_coder_t *dec, fox_stream_t *stream) {
     for (fox_u32_t i = 0; i < 0x080; ++i) dec->cache[i].argb = 0xFF000000;
     for (fox_u32_t i = 0; i < 0x4FC; ++i) dec->model[i]      = 0x7F;
     for (fox_u8_t i = 0; i < 4; ++i) fox_dec_renorm(dec);
-    return size;
 }
 
 fox_color_t fox_dec_read(fox_coder_t *dec) {
