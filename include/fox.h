@@ -3,6 +3,10 @@
 #define _fox_h_
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef uint_fast32_t fox_u32_t;
 typedef uint_least8_t fox_u8_t;
 
@@ -33,5 +37,9 @@ void fox_enc_close(fox_coder_t *enc);
 
 void fox_dec_open(fox_coder_t *dec, fox_stream_t *stream);
 fox_color_t fox_dec_read(fox_coder_t *dec);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
