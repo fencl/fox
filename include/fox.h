@@ -1,42 +1,29 @@
 #pragma once
-#ifndef _fox_h_
-#define _fox_h_
-#include <stdint.h>
+#ifndef fox_h_
+#define fox_h_
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-typedef uint_fast32_t fox_u32_t;
-typedef uint_least8_t fox_u8_t;
+struct fox {
+    // user-defined
+    unsigned char (*callback) (unsigned char arg, void *user);
+    void *user;
 
-typedef union fox_color {
-    struct { uint_least32_t argb: 32;               };
-    struct { uint_least32_t b: 8, g: 8, r: 8, a: 8; };
-} fox_color_t;
+    // zero-initialized
+    unsigned long lower, upper, input, color;
+    unsigned char cache[0x80][4], run;
+    signed char model[0x4FC];
+};
 
-typedef union fox_stream {
-    void     (*write) (union fox_stream *stream, fox_u8_t data);
-    fox_u8_t (*read)  (union fox_stream *stream);
-} fox_stream_t;
+// encoding
+void fox_write(struct fox *fox, unsigned long color);
+void fox_close(struct fox *fox);
 
-typedef struct fox_coder {
-    fox_stream_t *stream;
-    fox_color_t   cache[0x80];
-    fox_color_t   color;
-    fox_u32_t     lower;
-    fox_u32_t     range;
-    fox_u32_t     input;
-    fox_u8_t      run;
-    fox_u8_t      model[0x4FC];
-} fox_coder_t;
-
-void fox_enc_open(fox_coder_t *enc, fox_stream_t *stream);
-void fox_enc_write(fox_coder_t *enc, fox_color_t color);
-void fox_enc_close(fox_coder_t *enc);
-
-void fox_dec_open(fox_coder_t *dec, fox_stream_t *stream);
-fox_color_t fox_dec_read(fox_coder_t *dec);
+// decoding
+void fox_open(struct fox *fox);
+unsigned long fox_read(struct fox *fox);
 
 #ifdef __cplusplus
 }

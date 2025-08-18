@@ -1,76 +1,59 @@
 #include <fox.h>
 
-static inline void fox_enc_u32(fox_stream_t *stream, fox_u32_t v) {
-    for (fox_u8_t i = 0; i < 4; ++i) stream->write(stream, v & 0xFF), v >>= 8;
+static void fox_out(struct fox *fox) {
+    fox->callback(fox->lower >> 16 & 0xFF, fox->user);
+    fox->lower &= 0xFFFF, fox->upper &= 0xFFFF;
+    fox->lower <<= 8,     fox->upper <<= 8;
 }
 
-void fox_enc_open(fox_coder_t *enc, fox_stream_t *stream) {
-    enc->stream     = stream;
-    enc->color.argb = 0xFF000000;
-    enc->lower      = 0x00000000;
-    enc->range      = 0xFFFFFFFF;
-    enc->run        = 0;
+static void fox_enc_bit(struct fox *fox, signed int bit, unsigned int ctx) {
+    while (fox->lower >> 16 == 0xFF - (fox->upper >> 16)) fox_out(fox);
 
-    for (fox_u32_t i = 0; i < 0x080; ++i) enc->cache[i].argb = 0xFF000000;
-    for (fox_u32_t i = 0; i < 0x4FC; ++i) enc->model[i]      = 0x7F;
+    signed   char *mod = fox->model + ctx, prb = *mod;
+    unsigned long  rng = 0xFFFFFF - fox->lower - fox->upper;
+    unsigned long  mid = rng * (prb + 128) >> 8;
+
+    if (bit) fox->upper += rng - mid, *mod = prb + ((128 - prb) >> 3);
+        else fox->lower += mid + 1,   *mod = prb - ((128 + prb) >> 3);
 }
 
-static inline void fox_enc_renorm(fox_coder_t *enc) {
-    enc->stream->write(enc->stream, enc->lower >> 24);
-    enc->lower <<= 8, enc->range <<= 8, enc->range |= 0xFF;
+static void fox_enc(struct fox *fox, unsigned int sym, unsigned int ctx) {
+    for (unsigned int i = 8 + (sym >> 9), off = sym >> 1; i--;)
+        fox_enc_bit(fox, sym >> i & 1, ctx + (off >> i) - 1);
 }
 
-static void fox_enc_rc_bit(fox_coder_t *enc, fox_u8_t bit, fox_u32_t ctx) {
-    while (enc->lower >> 24 == (enc->lower + enc->range) >> 24)
-        fox_enc_renorm(enc);
-
-    fox_u8_t  prb = (enc->model[ctx]);
-    fox_u32_t mid = (enc->range >> 8) * prb;
-
-    if (bit) {
-        enc->model[ctx] = prb + ((0x100 - prb) >> 3);
-        enc->range = mid;
-    } else {
-        enc->model[ctx] = prb - (prb >> 3);
-        enc->lower += mid + 1;
-        enc->range -= mid + 1;
-    }
+static void fox_flush_run(struct fox *fox) {
+    fox_enc(fox, 0x200 | (255 + fox->run), 0), fox->run = 0;
 }
 
-static void fox_enc_rc(fox_coder_t *enc, fox_u32_t sym, fox_u32_t ctx) {
-    for (fox_u8_t i = 8 + (sym >> 9), j = i; i--; j--)
-        fox_enc_rc_bit(enc, sym >> i & 1, ctx + (sym >> j) - 1);
+void fox_write(struct fox *fox, unsigned long color) {
+    unsigned long prev = fox->color;
+
+    if (prev != color) {
+        if (fox->run) fox_flush_run(fox);
+
+        unsigned int i = color * 0x57B70101 >> 25 & 0x7F,
+            r = color >> 16 & 0xFF, g = color >>  8 & 0xFF,
+            b = color       & 0xFF, a = color >> 24 & 0xFF;
+
+        unsigned char *cache = fox->cache[i];
+        if (cache[0] != r || cache[1] != g || cache[2] != b || cache[3] != a) {
+            unsigned int dg = 0xFF & ((cache[1] = g) - (prev >> 8));
+            unsigned int dr = 0xFF & ((cache[0] = r) - (prev >> 16) - dg);
+            unsigned int db = 0xFF & ((cache[2] = b) - (prev      ) - dg);
+            unsigned int da = 0xFF & ((cache[3] = a) - (prev >> 24));
+
+            fox_enc(fox, 0x200 | dg, 0x000);
+            fox_enc(fox, 0x100 | dr, 0x1FF);
+            fox_enc(fox, 0x100 | db, 0x2FE);
+            fox_enc(fox, 0x100 | da, 0x3FD);
+        } else fox_enc(fox, 0x200 | (384 + i), 0);
+
+        fox->color = color;
+    } else if (++fox->run == 128) fox_flush_run(fox);
 }
 
-static inline void fox_enc_flush_run(fox_coder_t *enc) {
-    fox_enc_rc(enc, 0x200 | 255 + enc->run, 0), enc->run = 0;
-}
-
-void fox_enc_close(fox_coder_t *enc) {
-    if (enc->run) fox_enc_flush_run(enc);
-    for (fox_u8_t i = 0; i < 4; ++i) fox_enc_renorm(enc);
-}
-
-void fox_enc_write(fox_coder_t *enc, fox_color_t color) {
-    fox_color_t prev = enc->color;
-    if (prev.argb != color.argb) {
-        if (enc->run) fox_enc_flush_run(enc);
-
-        fox_u8_t hash = color.argb * 0xF86FEBF5 >> 25 & 0x7F;
-        if (enc->cache[hash].argb != color.argb) {
-
-            fox_u8_t diff_g = color.g - prev.g          & 0xFF;
-            fox_u8_t diff_r = color.r - prev.r - diff_g & 0xFF;
-            fox_u8_t diff_b = color.b - prev.b - diff_g & 0xFF;
-            fox_u8_t diff_a = color.a - prev.a          & 0xFF;
-            fox_enc_rc(enc, 0x200 | diff_g, 0x000);
-            fox_enc_rc(enc, 0x100 | diff_r, 0x1FF);
-            fox_enc_rc(enc, 0x100 | diff_b, 0x2FE);
-            fox_enc_rc(enc, 0x100 | diff_a, 0x3FD);
-
-            enc->cache[hash] = color;
-        } else fox_enc_rc(enc, 0x200 | 384 + hash, 0);
-
-        enc->color = color;
-    } else if (++enc->run >> 7) fox_enc_flush_run(enc);
+void fox_close(struct fox *fox) {
+    if (fox->run) fox_flush_run(fox);
+    for (int i = 3; i--;) fox_out(fox);
 }

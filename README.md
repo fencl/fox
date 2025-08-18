@@ -1,139 +1,110 @@
 # Fox
-Lossless image format
+Lossless image format and encoder/decoder in C
 
 Fox is a lossless image format aiming to provide a satisfying compression ratio with a tiny encoder/decoder.
-Fox bitstream encodes a stream of 8bit rgba pixels, no additional information is included.
-This makes fox a good choice for embeding into custom formats.
+Fox only encodes a stream of 32bit rgba pixels (8-bit per channel), includes no additional metadata like width/height.
+This makes fox a good choice for embedding into a custom container format.
 
 ## Tiny
-Both reference encoder and decoder are currenty written in under 80 LOC.
-There is no additional complexity in encoder compared to decoder.
+Both encoder and decoder are currenty written in under 60 LOC.
+
+## Dependencies
+No dependencies, not event libc. Just plain C99.
 
 ## Compression ratio
-Fox usually provides the same or slightly better compression ratio than PNG.
-There are outliers as with any format but generally Fox is better for very small images, photos, some textures and images with large areas of the same color.
-PNG works better for gradients, repeating patterns and images with logically detached RGB channels (normal maps, etc).
+Fox usually provides similar compression ratio to a PNG (libpng encoded).
+Fox might outperform PNG on photos, smaller images, some textures or screenshots.
+PNG works better for repeating patterns and can be usually brute force optimized to further reduce the image size.
+Both formats are outperformed by lossless versions of modern image formats such as WebP or JpegXL.
 
-Actuall numbers comming soon...
+See the [benchmark](BENCHMARK.md) for size comparison on few image sets.
+
+## Time complexity
+Each pixel is encoded/decoded in O(1) time. Therefore the whole image is encoded in O(n) time.
+The actual speed is not as impressive, mainly because each symbol (color, hash index or run length) is encoded bit by bit.
 
 ## Space complexity
 Fox compresses images in a streaming fashion with O(1) space complexity (acually < 2k bytes).
-This means that there is effectively no limit on the image size.
-
-## Time complexity
-There is no guesswork involved, each pixel is encoded in O(1) time. Therefore the whole image is encoded in O(n) time.
-The actual speed is not as impressive as it seems though, mainly because each bit of a symbol (color, hash index or run length) is encoded in a separate step.
-
-## Documentation
-WIP
-
-## Patents and license
-IANAL! Format uses similar pixel encoding to QOI format, with range coding and adaptive probability model on top.
-I am not aware of any patents regarding the techniques, as very similar techniques are widely used in many open formats (QOI, VP8L, CABAC, ...).
-
-The reference implementation is Boost Software Licensed (as it is very much the least intrusive license i know of except for CC0 and WTFPL), however feel free to make your own.
-
-# Reference implementation
-Reference implementation consists of a sorce code for encoder (enc.c), decoder (dec.c) and single header file (fox.h)
+This means that there is no limit on the image size.
 
 ## Building
-As with many projects I have published, no build system is provided as it is not necessary.
-Simply add `include` folder to your header paths and `src/enc.c` and/or `src/dec.c` to your sources. Boom. Done.
+No build system is currently included as it is not necessary.
+Simply add `include` folder to your header paths and compile/link `src/enc.c` and/or `src/dec.c` with your sources. Boom. Done.
 
 ## Usage
-Implementation has simple interface, however we have some setup to do.
-Both encoder and decoder share the same structure.
-First create the object.
-```c
-fox_coder_t fox;
+### Color
+Color is represented by a 32bit integer:
 ```
-Then prepare your stream. Wrap `fox_stream_t` in your stream structure. For example:
-```c
-typedef struct my_stream {
-    fox_stream_t stream;
-    FILE        *file;    // This is an example, here you should provide you own interface
-} my_stream_t;
+bits  0 ..  7 represent the blue  channel
+bits  8 .. 15 represent the green channel
+bits 16 .. 23 represent the red   channel
+bits 24 .. 31 represent the alpha channel
 ```
-Prepare stream function. Here are examples for our my_stream implementation. For encoder prepare writable stream:
+Or written in hex `0xAARRGGBB`.
+
+### Encoder/Decoder
+Both encoder and decoder share the same data structure.
+The structure has to be zero initialized except for user-provided callback and a user pointer.
+In this example we pass a standard stdio FILE through the user pointer.
 ```c
-void my_stream_write(fox_stream_t *stream, fox_u8_t data) {
-    my_stream_t *my_stream = (my_stream_t*) stream;
-
-    // stream is pointer to "stream" field in my_stream_t structure
-    // in this example this field is at the top of said structure so
-    // simple pointer cast is sufficient
-    // alternatively use offsetof(my_stream_t, stream)
-    // to find how many bytes to move the stream pointer back
-
-    // write data to the stream
-    fwrite(&data, 1, 1, my_stream->file);
+// fields except callback and user are initialized to zero
+struct fox example = { .callback = my_callback, .user = file };
+```
+Define your callback.
+If used as an encoder, the callback will be called by the encoder to write a byte to the output stream, return value is ignored.
+If used as a decoder, the callback will be called by the decoder to read a byte from the input stream, arg argument is ignored.
+In any case the byte read/written is always expected to be 8-bits.
+```c
+static unsigned char my_callback(unsigned char arg, void *user) {
+    // return fputc(arg, (FILE*) user); // for encoder mode
+    // return fgetc((FILE*) user); // for decoder mode
 }
 ```
-or for decoder prepare readable stream:
-```c
-fox_u8_t my_stream_read(fox_stream_t *stream) {
-    my_stream_t *my_stream = (my_stream_t*) stream;
-    // see comment in my_stream_write
-
-    // return next byte in the stream
-    fox_u8_t data;
-    fread(&data, 1, 1, my_stream->file);
-    return data;
-}
-```
-and finally initialize the stream
-
-```c
-my_stream_t stream = {
-    .stream.write = my_stream_write,
-    // or .stream.read = my_stream_read,
-
-    .file = fopen("file.bin", "wb") // or rb, dont forget fclose :)
-};
-```
+Now that the structure is initialized we can start encoding/decoding.
 
 ### Encoding
-To encode an image, first open the stream.
+Initialize the fox structure as shown above.
+
+Do not use `fox_open` - it is only used by the decoder.
+
+For each pixel call:
 ```c
-fox_enc_open(&fox, &stream);
+// void fox_write(struct fox *encoder, unsigned long color);
+fox_write(&example, color);
 ```
 
-Then for each pixel
+Close the stream by calling:
 ```c
-fox_enc_write(&fox, (fox_color_t) {
-    .r = /* red   component */,
-    .g = /* green component */,
-    .b = /* blue  component */,
-    .a = /* alpha component */,
-});
-
-/*
-    or alternatively encode color in single u32 number
-    bits [0..7]: red, [8..15]: green, [16..23]: blue, [24..31]: alpha
-
-    fox_enc_write(&fox, (fox_color_t) {
-        .argb = // here
-    });
-*/
-```
-
-Finally close the stream
-```c
-fox_enc_close(&fox);
+// void fox_close(struct fox *encoder);
+fox_close(&example);
 ```
 
 ### Decoding
-To decode an image, first open the stream.
+Initialize the fox structure as shown above.
+Open the stream by calling:
 ```c
-fox_dec_open(&fox, &stream);
+// void fox_open(struct fox *decoder);
+fox_open(&example);
 ```
-For each pixel
+
+For each pixel call:
 ```c
-fox_color_t color = fox_dec_read(&fox);
-// now store the color however you like.
-// you can access the .r, .g, .b, .a components or .argb value as explained in encoder
+// unsigned long fox_read(struct fox *decoder);
+unsigned long color = fox_read(&example);
 ```
-Unlike in encoder, stream does not have to be closed, to reuse the coder object, just open another stream.
+
+Do not use `fox_close` - it is only used by the encoder.
 
 ## Example
-I will provide some working example(s) later.
+Example is provided to show encoding and decoding.
+It converts TGA image to Fox and Fox to TGA.
+Only supported TGA formats are uncompressed 24 bit RGB, 32 bit RGBA and 8 bit grayscale.
+The fox image is saved with minimal header.
+
+To build the example there are two scripts `build.sh` and `build.bat` to build the example using cc and cl respectively.
+
+Usage:
+```
+fox encode image.tga image.fox
+fox decode image.fox image.tga
+```
