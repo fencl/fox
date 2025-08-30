@@ -1,846 +1,956 @@
 # Benchmark
-Here are some examples of the size difference between TGA, PNG and Fox format using the example encoder.
-TGA were converted from the PNGs using uncompressed 32 bit true-color format.
 
----
-[Lena (converted to 24bit true-color)](https://mortenhannemose.github.io/lena/)
+Here are some examples of the size difference between TGA, PNG and Fox format using the example encoder.  
+TGAs were converted from the PNGs using uncompressed 32 bit true-color format to represent the raw image size.
 
-file lena/Lena_512.png  
-tga size: 1048594 bytes  
-png size: 385490 bytes  
-fox size: 386156 bytes  
-ratio fox/tga: 36%  
-ratio fox/png: 100%  
+## Lena (converted to 24bit true-color PNG) ([source](https://mortenhannemose.github.io/lena))
 
----
-[Kodak Lossless True Color Image Suite](https://r0k.us/graphics/kodak/)
+### lena/Lena_512.png
 
-file kodak/kodim01.png  
-tga size: 1572882 bytes  
-png size: 736501 bytes  
-fox size: 604299 bytes  
-ratio fox/tga: 38%  
-ratio fox/png: 82%  
-  
-file kodak/kodim02.png  
-tga size: 1572882 bytes  
-png size: 617995 bytes  
-fox size: 529835 bytes  
-ratio fox/tga: 33%  
-ratio fox/png: 85%  
-  
-file kodak/kodim03.png  
-tga size: 1572882 bytes  
-png size: 502888 bytes  
-fox size: 450942 bytes  
-ratio fox/tga: 28%  
-ratio fox/png: 89%  
-  
-file kodak/kodim04.png  
-tga size: 1572882 bytes  
-png size: 637432 bytes  
-fox size: 568167 bytes  
-ratio fox/tga: 36%  
-ratio fox/png: 89%  
-  
-file kodak/kodim05.png  
-tga size: 1572882 bytes  
-png size: 785610 bytes  
-fox size: 670697 bytes  
-ratio fox/tga: 42%  
-ratio fox/png: 85%  
-  
-file kodak/kodim06.png  
-tga size: 1572882 bytes  
-png size: 618959 bytes  
-fox size: 531463 bytes  
-ratio fox/tga: 33%  
-ratio fox/png: 85%  
-  
-file kodak/kodim07.png  
-tga size: 1572882 bytes  
-png size: 566322 bytes  
-fox size: 488731 bytes  
-ratio fox/tga: 31%  
-ratio fox/png: 86%  
-  
-file kodak/kodim08.png  
-tga size: 1572882 bytes  
-png size: 788470 bytes  
-fox size: 690408 bytes  
-ratio fox/tga: 43%  
-ratio fox/png: 87%  
-  
-file kodak/kodim09.png  
-tga size: 1572882 bytes  
-png size: 582899 bytes  
-fox size: 495143 bytes  
-ratio fox/tga: 31%  
-ratio fox/png: 84%  
-  
-file kodak/kodim10.png  
-tga size: 1572882 bytes  
-png size: 593463 bytes  
-fox size: 535656 bytes  
-ratio fox/tga: 34%  
-ratio fox/png: 90%  
-  
-file kodak/kodim11.png  
-tga size: 1572882 bytes  
-png size: 621023 bytes  
-fox size: 519943 bytes  
-ratio fox/tga: 33%  
-ratio fox/png: 83%  
-  
-file kodak/kodim12.png  
-tga size: 1572882 bytes  
-png size: 531024 bytes  
-fox size: 466198 bytes  
-ratio fox/tga: 29%  
-ratio fox/png: 87%  
-  
-file kodak/kodim13.png  
-tga size: 1572882 bytes  
-png size: 822712 bytes  
-fox size: 683550 bytes  
-ratio fox/tga: 43%  
-ratio fox/png: 83%  
-  
-file kodak/kodim14.png  
-tga size: 1572882 bytes  
-png size: 692201 bytes  
-fox size: 590219 bytes  
-ratio fox/tga: 37%  
-ratio fox/png: 85%  
-  
-file kodak/kodim15.png  
-tga size: 1572882 bytes  
-png size: 612582 bytes  
-fox size: 545944 bytes  
-ratio fox/tga: 34%  
-ratio fox/png: 89%  
-  
-file kodak/kodim16.png  
-tga size: 1572882 bytes  
-png size: 534247 bytes  
-fox size: 460007 bytes  
-ratio fox/tga: 29%  
-ratio fox/png: 86%  
-  
-file kodak/kodim17.png  
-tga size: 1572882 bytes  
-png size: 602078 bytes  
-fox size: 520946 bytes  
-ratio fox/tga: 33%  
-ratio fox/png: 86%  
-  
-file kodak/kodim18.png  
-tga size: 1572882 bytes  
-png size: 780947 bytes  
-fox size: 676019 bytes  
-ratio fox/tga: 42%  
-ratio fox/png: 86%  
-  
-file kodak/kodim19.png  
-tga size: 1572882 bytes  
-png size: 671476 bytes  
-fox size: 574095 bytes  
-ratio fox/tga: 36%  
-ratio fox/png: 85%  
-  
-file kodak/kodim20.png  
-tga size: 1572882 bytes  
-png size: 492462 bytes  
-fox size: 411472 bytes  
-ratio fox/tga: 26%  
-ratio fox/png: 83%  
-  
-file kodak/kodim21.png  
-tga size: 1572882 bytes  
-png size: 637051 bytes  
-fox size: 522035 bytes  
-ratio fox/tga: 33%  
-ratio fox/png: 81%  
-  
-file kodak/kodim22.png  
-tga size: 1572882 bytes  
-png size: 701970 bytes  
-fox size: 632493 bytes  
-ratio fox/tga: 40%  
-ratio fox/png: 90%  
-  
-file kodak/kodim23.png  
-tga size: 1572882 bytes  
-png size: 557596 bytes  
-fox size: 536500 bytes  
-ratio fox/tga: 34%  
-ratio fox/png: 96%  
-  
-file kodak/kodim24.png  
-tga size: 1572882 bytes  
-png size: 706397 bytes  
-fox size: 600906 bytes  
-ratio fox/tga: 38%  
-ratio fox/png: 85%  
+- TGA size: 1048594 bytes
+- PNG size: 385490 bytes
+- Fox size: 385626 bytes
+- ratio Fox/TGA: 36%
+- ratio Fox/PNG: 100%
 
----
-[WebP Lossless and Alpha Gallery](https://developers.google.com/speed/webp/gallery2)
+## Kodak Lossless True Color Image Suite ([source](https://r0k.us/graphics/kodak))
 
-file webp/1.png  
-tga size: 481618 bytes  
-png size: 113340 bytes  
-fox size: 101252 bytes  
-ratio fox/tga: 21%  
-ratio fox/png: 89%  
-  
-file webp/2.png  
-tga size: 609898 bytes  
-png size: 39063 bytes  
-fox size: 45189 bytes  
-ratio fox/tga: 7%  
-ratio fox/png: 115%  
-  
-file webp/3.png  
-tga size: 1920018 bytes  
-png size: 218662 bytes  
-fox size: 201353 bytes  
-ratio fox/tga: 10%  
-ratio fox/png: 92%  
-  
-file webp/4.png  
-tga size: 274510 bytes  
-png size: 50397 bytes  
-fox size: 42858 bytes  
-ratio fox/tga: 15%  
-ratio fox/png: 85%  
-  
-file webp/5.png  
-tga size: 360018 bytes  
-png size: 129875 bytes  
-fox size: 143676 bytes  
-ratio fox/tga: 39%  
-ratio fox/png: 110%  
+### kodak/kodim01.png
 
----
-[Kenney Pixel Platformer](https://kenney.nl/assets/pixel-platformer)
+- TGA size: 1572882 bytes
+- PNG size: 736501 bytes
+- Fox size: 604581 bytes
+- ratio Fox/TGA: 38%
+- ratio Fox/PNG: 82%
 
-file kenney_pixel_platformer/tilemap_packed.png  
-tga size: 233298 bytes  
-png size: 5913 bytes  
-fox size: 11258 bytes  
-ratio fox/tga: 4%  
-ratio fox/png: 190%  
-  
-file kenney_pixel_platformer/tilemap-backgrounds_packed.png  
-tga size: 55314 bytes  
-png size: 521 bytes  
-fox size: 661 bytes  
-ratio fox/tga: 1%  
-ratio fox/png: 126%  
-  
-file kenney_pixel_platformer/tilemap-characters_packed.png  
-tga size: 62226 bytes  
-png size: 1990 bytes  
-fox size: 3563 bytes  
-ratio fox/tga: 5%  
-ratio fox/png: 179%  
+### kodak/kodim02.png
 
----
-[FLIF Example Fish](https://flif.info/example.html)
+- TGA size: 1572882 bytes
+- PNG size: 617995 bytes
+- Fox size: 537084 bytes
+- ratio Fox/TGA: 34%
+- ratio Fox/PNG: 86%
 
-file flif/fish.png  
-tga size: 10293950 bytes  
-png size: 533004 bytes  
-fox size: 570053 bytes  
-ratio fox/tga: 5%  
-ratio fox/png: 106%  
+### kodak/kodim03.png
 
----
-[QOI Benchmark Suite - Textures Photo](https://qoiformat.org/benchmark/)
+- TGA size: 1572882 bytes
+- PNG size: 502888 bytes
+- Fox size: 448709 bytes
+- ratio Fox/TGA: 28%
+- ratio Fox/PNG: 89%
 
-file qoi_textures_photo/clover.png  
-tga size: 4194322 bytes  
-png size: 2582326 bytes  
-fox size: 2138186 bytes  
-ratio fox/tga: 50%  
-ratio fox/png: 82%  
-  
-file qoi_textures_photo/grass1.png  
-tga size: 4194322 bytes  
-png size: 2851919 bytes  
-fox size: 2115606 bytes  
-ratio fox/tga: 50%  
-ratio fox/png: 74%  
-  
-file qoi_textures_photo/IMGP5480_seamless.png  
-tga size: 4194322 bytes  
-png size: 2015771 bytes  
-fox size: 1465444 bytes  
-ratio fox/tga: 34%  
-ratio fox/png: 72%  
-  
-file qoi_textures_photo/IMGP5482_seamless.png  
-tga size: 4194322 bytes  
-png size: 2212110 bytes  
-fox size: 1530445 bytes  
-ratio fox/tga: 36%  
-ratio fox/png: 69%  
-  
-file qoi_textures_photo/IMGP5487_seamless.png  
-tga size: 4194322 bytes  
-png size: 1284559 bytes  
-fox size: 1160732 bytes  
-ratio fox/tga: 27%  
-ratio fox/png: 90%  
-  
-file qoi_textures_photo/IMGP5493_seamless_1.png  
-tga size: 4194322 bytes  
-png size: 938069 bytes  
-fox size: 975189 bytes  
-ratio fox/tga: 23%  
-ratio fox/png: 103%  
-  
-file qoi_textures_photo/IMGP5493_seamless_2.png  
-tga size: 4194322 bytes  
-png size: 939469 bytes  
-fox size: 1001729 bytes  
-ratio fox/tga: 23%  
-ratio fox/png: 106%  
-  
-file qoi_textures_photo/IMGP5497_seamless.png  
-tga size: 4194322 bytes  
-png size: 1660371 bytes  
-fox size: 1249949 bytes  
-ratio fox/tga: 29%  
-ratio fox/png: 75%  
-  
-file qoi_textures_photo/IMGP5498_seamless.png  
-tga size: 4194322 bytes  
-png size: 2099109 bytes  
-fox size: 1424093 bytes  
-ratio fox/tga: 33%  
-ratio fox/png: 67%  
-  
-file qoi_textures_photo/IMGP5505_seamless.png  
-tga size: 4194322 bytes  
-png size: 1933044 bytes  
-fox size: 1499176 bytes  
-ratio fox/tga: 35%  
-ratio fox/png: 77%  
-  
-file qoi_textures_photo/IMGP5511_seamless.png  
-tga size: 4194322 bytes  
-png size: 2031208 bytes  
-fox size: 1407748 bytes  
-ratio fox/tga: 33%  
-ratio fox/png: 69%  
-  
-file qoi_textures_photo/IMGP5514_seamless_1.png  
-tga size: 4194322 bytes  
-png size: 1804014 bytes  
-fox size: 1322631 bytes  
-ratio fox/tga: 31%  
-ratio fox/png: 73%  
-  
-file qoi_textures_photo/IMGP5514_seamless_2.png  
-tga size: 4194322 bytes  
-png size: 1628054 bytes  
-fox size: 1283139 bytes  
-ratio fox/tga: 30%  
-ratio fox/png: 78%  
-  
-file qoi_textures_photo/IMGP5525_seamless.png  
-tga size: 4194322 bytes  
-png size: 2235848 bytes  
-fox size: 1567600 bytes  
-ratio fox/tga: 37%  
-ratio fox/png: 70%  
-  
-file qoi_textures_photo/IMGP5539_almost_seamless.png  
-tga size: 4194322 bytes  
-png size: 1602297 bytes  
-fox size: 1385007 bytes  
-ratio fox/tga: 33%  
-ratio fox/png: 86%  
-  
-file qoi_textures_photo/IMGP5546_seamless.png  
-tga size: 4194322 bytes  
-png size: 1143374 bytes  
-fox size: 1028755 bytes  
-ratio fox/tga: 24%  
-ratio fox/png: 89%  
-  
-file qoi_textures_photo/rock01.png  
-tga size: 4194322 bytes  
-png size: 2081431 bytes  
-fox size: 1546769 bytes  
-ratio fox/tga: 36%  
-ratio fox/png: 74%  
-  
-file qoi_textures_photo/rock02.png  
-tga size: 4194322 bytes  
-png size: 2366053 bytes  
-fox size: 1700577 bytes  
-ratio fox/tga: 40%  
-ratio fox/png: 71%  
-  
-file qoi_textures_photo/rock02_2.png  
-tga size: 4194322 bytes  
-png size: 2397423 bytes  
-fox size: 1706886 bytes  
-ratio fox/tga: 40%  
-ratio fox/png: 71%  
-  
-file qoi_textures_photo/rock03.png  
-tga size: 4194322 bytes  
-png size: 2048185 bytes  
-fox size: 1664862 bytes  
-ratio fox/tga: 39%  
-ratio fox/png: 81%  
+### kodak/kodim04.png
 
----
-[QOI Benchmark Suite - Screenshots Web](https://qoiformat.org/benchmark/)
+- TGA size: 1572882 bytes
+- PNG size: 637432 bytes
+- Fox size: 568146 bytes
+- ratio Fox/TGA: 36%
+- ratio Fox/PNG: 89%
 
-file qoi_screenshots_web/amazon.com.png  
-tga size: 32021462 bytes  
-png size: 6381202 bytes  
-fox size: 3857238 bytes  
-ratio fox/tga: 12%  
-ratio fox/png: 60%  
-  
-file qoi_screenshots_web/apple.com.png  
-tga size: 24973278 bytes  
-png size: 2360762 bytes  
-fox size: 1542061 bytes  
-ratio fox/tga: 6%  
-ratio fox/png: 65%  
-  
-file qoi_screenshots_web/cnn.com.png  
-tga size: 27525750 bytes  
-png size: 2748636 bytes  
-fox size: 1513812 bytes  
-ratio fox/tga: 5%  
-ratio fox/png: 55%  
-  
-file qoi_screenshots_web/creativecommons.org.png  
-tga size: 27012234 bytes  
-png size: 6292865 bytes  
-fox size: 3908248 bytes  
-ratio fox/tga: 14%  
-ratio fox/png: 62%  
-  
-file qoi_screenshots_web/duckduckgo.com.png  
-tga size: 15094266 bytes  
-png size: 289177 bytes  
-fox size: 202608 bytes  
-ratio fox/tga: 1%  
-ratio fox/png: 70%  
-  
-file qoi_screenshots_web/en.wikipedia.org.png  
-tga size: 15419890 bytes  
-png size: 1316655 bytes  
-fox size: 1035832 bytes  
-ratio fox/tga: 6%  
-ratio fox/png: 78%  
-  
-file qoi_screenshots_web/imdb.com.png  
-tga size: 33828150 bytes  
-png size: 3012744 bytes  
-fox size: 1747090 bytes  
-ratio fox/tga: 5%  
-ratio fox/png: 57%  
-  
-file qoi_screenshots_web/microsoft.com.png  
-tga size: 17478674 bytes  
-png size: 1990915 bytes  
-fox size: 1232531 bytes  
-ratio fox/tga: 7%  
-ratio fox/png: 61%  
-  
-file qoi_screenshots_web/news.ycombinator.com.png  
-tga size: 7685018 bytes  
-png size: 266815 bytes  
-fox size: 160167 bytes  
-ratio fox/tga: 2%  
-ratio fox/png: 60%  
-  
-file qoi_screenshots_web/nytimes.com.png  
-tga size: 30356578 bytes  
-png size: 3331485 bytes  
-fox size: 1892608 bytes  
-ratio fox/tga: 6%  
-ratio fox/png: 56%  
-  
-file qoi_screenshots_web/phoboslab.org.png  
-tga size: 108543102 bytes  
-png size: 6001461 bytes  
-fox size: 6069639 bytes  
-ratio fox/tga: 5%  
-ratio fox/png: 101%  
-  
-file qoi_screenshots_web/reddit.com.png  
-tga size: 42058034 bytes  
-png size: 3825292 bytes  
-fox size: 2174275 bytes  
-ratio fox/tga: 5%  
-ratio fox/png: 56%  
-  
-file qoi_screenshots_web/stripe.com.png  
-tga size: 34678974 bytes  
-png size: 1118955 bytes  
-fox size: 997023 bytes  
-ratio fox/tga: 2%  
-ratio fox/png: 89%  
-  
-file qoi_screenshots_web/sublime.png  
-tga size: 38356434 bytes  
-png size: 1335714 bytes  
-fox size: 972433 bytes  
-ratio fox/tga: 2%  
-ratio fox/png: 72%  
+### kodak/kodim05.png
 
----
-[QOI Benchmark Suite - Photo Wikipedia](https://qoiformat.org/benchmark/)
+- TGA size: 1572882 bytes
+- PNG size: 785610 bytes
+- Fox size: 670760 bytes
+- ratio Fox/TGA: 42%
+- ratio Fox/PNG: 85%
 
-file qoi_photo_wikipedia/001.png  
-tga size: 4338418 bytes  
-png size: 1616664 bytes  
-fox size: 1458051 bytes  
-ratio fox/tga: 33%  
-ratio fox/png: 90%  
-  
-file qoi_photo_wikipedia/002.png  
-tga size: 4062258 bytes  
-png size: 1713213 bytes  
-fox size: 1662622 bytes  
-ratio fox/tga: 40%  
-ratio fox/png: 97%  
-  
-file qoi_photo_wikipedia/003.png  
-tga size: 4193138 bytes  
-png size: 1525572 bytes  
-fox size: 1534446 bytes  
-ratio fox/tga: 36%  
-ratio fox/png: 100%  
-  
-file qoi_photo_wikipedia/004.png  
-tga size: 4078386 bytes  
-png size: 2289144 bytes  
-fox size: 2013799 bytes  
-ratio fox/tga: 49%  
-ratio fox/png: 87%  
-  
-file qoi_photo_wikipedia/005.png  
-tga size: 4008210 bytes  
-png size: 2122983 bytes  
-fox size: 2034882 bytes  
-ratio fox/tga: 50%  
-ratio fox/png: 95%  
-  
-file qoi_photo_wikipedia/006.png  
-tga size: 5256594 bytes  
-png size: 2246045 bytes  
-fox size: 2007402 bytes  
-ratio fox/tga: 38%  
-ratio fox/png: 89%  
-  
-file qoi_photo_wikipedia/007.png  
-tga size: 3978258 bytes  
-png size: 1926046 bytes  
-fox size: 1647500 bytes  
-ratio fox/tga: 41%  
-ratio fox/png: 85%  
-  
-file qoi_photo_wikipedia/008.png  
-tga size: 3953682 bytes  
-png size: 1344960 bytes  
-fox size: 1317048 bytes  
-ratio fox/tga: 33%  
-ratio fox/png: 97%  
-  
-file qoi_photo_wikipedia/009.png  
-tga size: 4021266 bytes  
-png size: 1762007 bytes  
-fox size: 1534383 bytes  
-ratio fox/tga: 38%  
-ratio fox/png: 87%  
-  
-file qoi_photo_wikipedia/010.png  
-tga size: 3696274 bytes  
-png size: 1804339 bytes  
-fox size: 1742619 bytes  
-ratio fox/tga: 47%  
-ratio fox/png: 96%  
-  
-file qoi_photo_wikipedia/011.png  
-tga size: 4704978 bytes  
-png size: 1794310 bytes  
-fox size: 1892013 bytes  
-ratio fox/tga: 40%  
-ratio fox/png: 105%  
-  
-file qoi_photo_wikipedia/012.png  
-tga size: 3865650 bytes  
-png size: 2170739 bytes  
-fox size: 2098141 bytes  
-ratio fox/tga: 54%  
-ratio fox/png: 96%  
-  
-file qoi_photo_wikipedia/013.png  
-tga size: 4770706 bytes  
-png size: 2391936 bytes  
-fox size: 2161615 bytes  
-ratio fox/tga: 45%  
-ratio fox/png: 90%  
-  
-file qoi_photo_wikipedia/014.png  
-tga size: 3962386 bytes  
-png size: 1755987 bytes  
-fox size: 1819109 bytes  
-ratio fox/tga: 45%  
-ratio fox/png: 103%  
-  
-file qoi_photo_wikipedia/015.png  
-tga size: 3960018 bytes  
-png size: 1929422 bytes  
-fox size: 1646137 bytes  
-ratio fox/tga: 41%  
-ratio fox/png: 85%  
-  
-file qoi_photo_wikipedia/016.png  
-tga size: 3717010 bytes  
-png size: 1009685 bytes  
-fox size: 1128884 bytes  
-ratio fox/tga: 30%  
-ratio fox/png: 111%  
-  
-file qoi_photo_wikipedia/017.png  
-tga size: 4544898 bytes  
-png size: 1662824 bytes  
-fox size: 1734794 bytes  
-ratio fox/tga: 38%  
-ratio fox/png: 104%  
-  
-file qoi_photo_wikipedia/018.png  
-tga size: 5237890 bytes  
-png size: 2152214 bytes  
-fox size: 2059136 bytes  
-ratio fox/tga: 39%  
-ratio fox/png: 95%  
-  
-file qoi_photo_wikipedia/019.png  
-tga size: 4804818 bytes  
-png size: 1747944 bytes  
-fox size: 1985741 bytes  
-ratio fox/tga: 41%  
-ratio fox/png: 113%  
-  
-file qoi_photo_wikipedia/020.png  
-tga size: 4478994 bytes  
-png size: 1961459 bytes  
-fox size: 1884255 bytes  
-ratio fox/tga: 42%  
-ratio fox/png: 96%  
-  
-file qoi_photo_wikipedia/021.png  
-tga size: 5057490 bytes  
-png size: 2212986 bytes  
-fox size: 2155116 bytes  
-ratio fox/tga: 42%  
-ratio fox/png: 97%  
-  
-file qoi_photo_wikipedia/022.png  
-tga size: 3775698 bytes  
-png size: 2002984 bytes  
-fox size: 1920517 bytes  
-ratio fox/tga: 50%  
-ratio fox/png: 95%  
-  
-file qoi_photo_wikipedia/023.png  
-tga size: 4478994 bytes  
-png size: 1527956 bytes  
-fox size: 1556387 bytes  
-ratio fox/tga: 34%  
-ratio fox/png: 101%  
-  
-file qoi_photo_wikipedia/024.png  
-tga size: 4450962 bytes  
-png size: 1965768 bytes  
-fox size: 1694605 bytes  
-ratio fox/tga: 38%  
-ratio fox/png: 86%  
-  
-file qoi_photo_wikipedia/025.png  
-tga size: 5141170 bytes  
-png size: 2241618 bytes  
-fox size: 2047437 bytes  
-ratio fox/tga: 39%  
-ratio fox/png: 91%  
-  
-file qoi_photo_wikipedia/026.png  
-tga size: 4160018 bytes  
-png size: 2110391 bytes  
-fox size: 1990235 bytes  
-ratio fox/tga: 47%  
-ratio fox/png: 94%  
-  
-file qoi_photo_wikipedia/027.png  
-tga size: 4469778 bytes  
-png size: 2039457 bytes  
-fox size: 1908034 bytes  
-ratio fox/tga: 42%  
-ratio fox/png: 93%  
-  
-file qoi_photo_wikipedia/028.png  
-tga size: 4021266 bytes  
-png size: 1661136 bytes  
-fox size: 1970195 bytes  
-ratio fox/tga: 48%  
-ratio fox/png: 118%  
-  
-file qoi_photo_wikipedia/029.png  
-tga size: 4478994 bytes  
-png size: 2072449 bytes  
-fox size: 2127731 bytes  
-ratio fox/tga: 47%  
-ratio fox/png: 102%  
-  
-file qoi_photo_wikipedia/030.png  
-tga size: 5138578 bytes  
-png size: 1864601 bytes  
-fox size: 1920104 bytes  
-ratio fox/tga: 37%  
-ratio fox/png: 102%  
-  
-file qoi_photo_wikipedia/031.png  
-tga size: 4127778 bytes  
-png size: 1920302 bytes  
-fox size: 1838371 bytes  
-ratio fox/tga: 44%  
-ratio fox/png: 95%  
-  
-file qoi_photo_wikipedia/032.png  
-tga size: 4478994 bytes  
-png size: 1358489 bytes  
-fox size: 1340970 bytes  
-ratio fox/tga: 29%  
-ratio fox/png: 98%  
-  
-file qoi_photo_wikipedia/033.png  
-tga size: 3824658 bytes  
-png size: 1562915 bytes  
-fox size: 1503691 bytes  
-ratio fox/tga: 39%  
-ratio fox/png: 96%  
-  
-file qoi_photo_wikipedia/034.png  
-tga size: 3898642 bytes  
-png size: 1520514 bytes  
-fox size: 1502637 bytes  
-ratio fox/tga: 38%  
-ratio fox/png: 98%  
-  
-file qoi_photo_wikipedia/035.png  
-tga size: 4481074 bytes  
-png size: 1610751 bytes  
-fox size: 1708094 bytes  
-ratio fox/tga: 38%  
-ratio fox/png: 106%  
-  
-file qoi_photo_wikipedia/036.png  
-tga size: 3727170 bytes  
-png size: 1806256 bytes  
-fox size: 1742483 bytes  
-ratio fox/tga: 46%  
-ratio fox/png: 96%  
-  
-file qoi_photo_wikipedia/037.png  
-tga size: 4478994 bytes  
-png size: 1797482 bytes  
-fox size: 1999153 bytes  
-ratio fox/tga: 44%  
-ratio fox/png: 111%  
-  
-file qoi_photo_wikipedia/038.png  
-tga size: 3840018 bytes  
-png size: 1085056 bytes  
-fox size: 1123675 bytes  
-ratio fox/tga: 29%  
-ratio fox/png: 103%  
-  
-file qoi_photo_wikipedia/039.png  
-tga size: 4478994 bytes  
-png size: 1957790 bytes  
-fox size: 1872345 bytes  
-ratio fox/tga: 41%  
-ratio fox/png: 95%  
-  
-file qoi_photo_wikipedia/040.png  
-tga size: 4478994 bytes  
-png size: 1638402 bytes  
-fox size: 1639564 bytes  
-ratio fox/tga: 36%  
-ratio fox/png: 100%  
-  
-file qoi_photo_wikipedia/041.png  
-tga size: 4028882 bytes  
-png size: 1300001 bytes  
-fox size: 1239642 bytes  
-ratio fox/tga: 30%  
-ratio fox/png: 95%  
-  
-file qoi_photo_wikipedia/042.png  
-tga size: 4680018 bytes  
-png size: 1826109 bytes  
-fox size: 1759420 bytes  
-ratio fox/tga: 37%  
-ratio fox/png: 96%  
-  
-file qoi_photo_wikipedia/043.png  
-tga size: 5256594 bytes  
-png size: 2035095 bytes  
-fox size: 1774587 bytes  
-ratio fox/tga: 33%  
-ratio fox/png: 87%  
-  
-file qoi_photo_wikipedia/044.png  
-tga size: 5072274 bytes  
-png size: 1829920 bytes  
-fox size: 1781042 bytes  
-ratio fox/tga: 35%  
-ratio fox/png: 97%  
-  
-file qoi_photo_wikipedia/045.png  
-tga size: 4478994 bytes  
-png size: 1297590 bytes  
-fox size: 1504611 bytes  
-ratio fox/tga: 33%  
-ratio fox/png: 115%  
-  
-file qoi_photo_wikipedia/046.png  
-tga size: 3694098 bytes  
-png size: 1679421 bytes  
-fox size: 1699824 bytes  
-ratio fox/tga: 46%  
-ratio fox/png: 101%  
-  
-file qoi_photo_wikipedia/047.png  
-tga size: 4353682 bytes  
-png size: 1736783 bytes  
-fox size: 1622875 bytes  
-ratio fox/tga: 37%  
-ratio fox/png: 93%  
-  
-file qoi_photo_wikipedia/048.png  
-tga size: 3753618 bytes  
-png size: 1843434 bytes  
-fox size: 1604577 bytes  
-ratio fox/tga: 42%  
-ratio fox/png: 87%  
-  
-file qoi_photo_wikipedia/049.png  
-tga size: 4622418 bytes  
-png size: 1906602 bytes  
-fox size: 2142200 bytes  
-ratio fox/tga: 46%  
-ratio fox/png: 112%  
+### kodak/kodim06.png
+
+- TGA size: 1572882 bytes
+- PNG size: 618959 bytes
+- Fox size: 530229 bytes
+- ratio Fox/TGA: 33%
+- ratio Fox/PNG: 85%
+
+### kodak/kodim07.png
+
+- TGA size: 1572882 bytes
+- PNG size: 566322 bytes
+- Fox size: 486526 bytes
+- ratio Fox/TGA: 30%
+- ratio Fox/PNG: 85%
+
+### kodak/kodim08.png
+
+- TGA size: 1572882 bytes
+- PNG size: 788470 bytes
+- Fox size: 690496 bytes
+- ratio Fox/TGA: 43%
+- ratio Fox/PNG: 87%
+
+### kodak/kodim09.png
+
+- TGA size: 1572882 bytes
+- PNG size: 582899 bytes
+- Fox size: 493489 bytes
+- ratio Fox/TGA: 31%
+- ratio Fox/PNG: 84%
+
+### kodak/kodim10.png
+
+- TGA size: 1572882 bytes
+- PNG size: 593463 bytes
+- Fox size: 534506 bytes
+- ratio Fox/TGA: 33%
+- ratio Fox/PNG: 90%
+
+### kodak/kodim11.png
+
+- TGA size: 1572882 bytes
+- PNG size: 621023 bytes
+- Fox size: 520700 bytes
+- ratio Fox/TGA: 33%
+- ratio Fox/PNG: 83%
+
+### kodak/kodim12.png
+
+- TGA size: 1572882 bytes
+- PNG size: 531024 bytes
+- Fox size: 462235 bytes
+- ratio Fox/TGA: 29%
+- ratio Fox/PNG: 87%
+
+### kodak/kodim13.png
+
+- TGA size: 1572882 bytes
+- PNG size: 822712 bytes
+- Fox size: 683674 bytes
+- ratio Fox/TGA: 43%
+- ratio Fox/PNG: 83%
+
+### kodak/kodim14.png
+
+- TGA size: 1572882 bytes
+- PNG size: 692201 bytes
+- Fox size: 590176 bytes
+- ratio Fox/TGA: 37%
+- ratio Fox/PNG: 85%
+
+### kodak/kodim15.png
+
+- TGA size: 1572882 bytes
+- PNG size: 612582 bytes
+- Fox size: 544027 bytes
+- ratio Fox/TGA: 34%
+- ratio Fox/PNG: 88%
+
+### kodak/kodim16.png
+
+- TGA size: 1572882 bytes
+- PNG size: 534247 bytes
+- Fox size: 456894 bytes
+- ratio Fox/TGA: 29%
+- ratio Fox/PNG: 85%
+
+### kodak/kodim17.png
+
+- TGA size: 1572882 bytes
+- PNG size: 602078 bytes
+- Fox size: 520202 bytes
+- ratio Fox/TGA: 33%
+- ratio Fox/PNG: 86%
+
+### kodak/kodim18.png
+
+- TGA size: 1572882 bytes
+- PNG size: 780947 bytes
+- Fox size: 675921 bytes
+- ratio Fox/TGA: 42%
+- ratio Fox/PNG: 86%
+
+### kodak/kodim19.png
+
+- TGA size: 1572882 bytes
+- PNG size: 671476 bytes
+- Fox size: 572816 bytes
+- ratio Fox/TGA: 36%
+- ratio Fox/PNG: 85%
+
+### kodak/kodim20.png
+
+- TGA size: 1572882 bytes
+- PNG size: 492462 bytes
+- Fox size: 406279 bytes
+- ratio Fox/TGA: 25%
+- ratio Fox/PNG: 82%
+
+### kodak/kodim21.png
+
+- TGA size: 1572882 bytes
+- PNG size: 637051 bytes
+- Fox size: 520788 bytes
+- ratio Fox/TGA: 33%
+- ratio Fox/PNG: 81%
+
+### kodak/kodim22.png
+
+- TGA size: 1572882 bytes
+- PNG size: 701970 bytes
+- Fox size: 631649 bytes
+- ratio Fox/TGA: 40%
+- ratio Fox/PNG: 89%
+
+### kodak/kodim23.png
+
+- TGA size: 1572882 bytes
+- PNG size: 557596 bytes
+- Fox size: 535839 bytes
+- ratio Fox/TGA: 34%
+- ratio Fox/PNG: 96%
+
+### kodak/kodim24.png
+
+- TGA size: 1572882 bytes
+- PNG size: 706397 bytes
+- Fox size: 600876 bytes
+- ratio Fox/TGA: 38%
+- ratio Fox/PNG: 85%
+
+## WebP Lossless and Alpha Gallery ([source](https://developers.google.com/speed/webp/gallery2))
+
+### webp/1.png
+
+- TGA size: 481618 bytes
+- PNG size: 113340 bytes
+- Fox size: 101229 bytes
+- ratio Fox/TGA: 21%
+- ratio Fox/PNG: 89%
+
+### webp/2.png
+
+- TGA size: 609898 bytes
+- PNG size: 39063 bytes
+- Fox size: 45763 bytes
+- ratio Fox/TGA: 7%
+- ratio Fox/PNG: 117%
+
+### webp/3.png
+
+- TGA size: 1920018 bytes
+- PNG size: 218662 bytes
+- Fox size: 201807 bytes
+- ratio Fox/TGA: 10%
+- ratio Fox/PNG: 92%
+
+### webp/4.png
+
+- TGA size: 274510 bytes
+- PNG size: 50397 bytes
+- Fox size: 42791 bytes
+- ratio Fox/TGA: 15%
+- ratio Fox/PNG: 84%
+
+### webp/5.png
+
+- TGA size: 360018 bytes
+- PNG size: 129875 bytes
+- Fox size: 143367 bytes
+- ratio Fox/TGA: 39%
+- ratio Fox/PNG: 110%
+
+## Kenney Pixel Platformer ([source](https://kenney.nl/assets/pixel-platformer))
+
+### kenney_pixel_platformer/tilemap_packed.png
+
+- TGA size: 233298 bytes
+- PNG size: 5913 bytes
+- Fox size: 11169 bytes
+- ratio Fox/TGA: 4%
+- ratio Fox/PNG: 188%
+
+### kenney_pixel_platformer/tilemap-backgrounds_packed.png
+
+- TGA size: 55314 bytes
+- PNG size: 521 bytes
+- Fox size: 665 bytes
+- ratio Fox/TGA: 1%
+- ratio Fox/PNG: 127%
+
+### kenney_pixel_platformer/tilemap-characters_packed.png
+
+- TGA size: 62226 bytes
+- PNG size: 1990 bytes
+- Fox size: 3328 bytes
+- ratio Fox/TGA: 5%
+- ratio Fox/PNG: 167%
+
+## FLIF Example Fish ([source](https://flif.info/example.html))
+
+### flif/fish.png
+
+- TGA size: 10293950 bytes
+- PNG size: 533004 bytes
+- Fox size: 576984 bytes
+- ratio Fox/TGA: 5%
+- ratio Fox/PNG: 108%
+
+## QOI Benchmark Suite - Textures Photo ([source](https://qoiformat.org/benchmark/))
+
+### qoi_textures_photo/clover.png
+
+- TGA size: 4194322 bytes
+- PNG size: 2582326 bytes
+- Fox size: 2138134 bytes
+- ratio Fox/TGA: 50%
+- ratio Fox/PNG: 82%
+
+### qoi_textures_photo/grass1.png
+
+- TGA size: 4194322 bytes
+- PNG size: 2851919 bytes
+- Fox size: 2115621 bytes
+- ratio Fox/TGA: 50%
+- ratio Fox/PNG: 74%
+
+### qoi_textures_photo/IMGP5480_seamless.png
+
+- TGA size: 4194322 bytes
+- PNG size: 2015771 bytes
+- Fox size: 1465508 bytes
+- ratio Fox/TGA: 34%
+- ratio Fox/PNG: 72%
+
+### qoi_textures_photo/IMGP5482_seamless.png
+
+- TGA size: 4194322 bytes
+- PNG size: 2212110 bytes
+- Fox size: 1530355 bytes
+- ratio Fox/TGA: 36%
+- ratio Fox/PNG: 69%
+
+### qoi_textures_photo/IMGP5487_seamless.png
+
+- TGA size: 4194322 bytes
+- PNG size: 1284559 bytes
+- Fox size: 1161505 bytes
+- ratio Fox/TGA: 27%
+- ratio Fox/PNG: 90%
+
+### qoi_textures_photo/IMGP5493_seamless_1.png
+
+- TGA size: 4194322 bytes
+- PNG size: 938069 bytes
+- Fox size: 966136 bytes
+- ratio Fox/TGA: 23%
+- ratio Fox/PNG: 102%
+
+### qoi_textures_photo/IMGP5493_seamless_2.png
+
+- TGA size: 4194322 bytes
+- PNG size: 939469 bytes
+- Fox size: 1000366 bytes
+- ratio Fox/TGA: 23%
+- ratio Fox/PNG: 106%
+
+### qoi_textures_photo/IMGP5497_seamless.png
+
+- TGA size: 4194322 bytes
+- PNG size: 1660371 bytes
+- Fox size: 1248243 bytes
+- ratio Fox/TGA: 29%
+- ratio Fox/PNG: 75%
+
+### qoi_textures_photo/IMGP5498_seamless.png
+
+- TGA size: 4194322 bytes
+- PNG size: 2099109 bytes
+- Fox size: 1422946 bytes
+- ratio Fox/TGA: 33%
+- ratio Fox/PNG: 67%
+
+### qoi_textures_photo/IMGP5505_seamless.png
+
+- TGA size: 4194322 bytes
+- PNG size: 1933044 bytes
+- Fox size: 1498921 bytes
+- ratio Fox/TGA: 35%
+- ratio Fox/PNG: 77%
+
+### qoi_textures_photo/IMGP5511_seamless.png
+
+- TGA size: 4194322 bytes
+- PNG size: 2031208 bytes
+- Fox size: 1407508 bytes
+- ratio Fox/TGA: 33%
+- ratio Fox/PNG: 69%
+
+### qoi_textures_photo/IMGP5514_seamless_1.png
+
+- TGA size: 4194322 bytes
+- PNG size: 1804014 bytes
+- Fox size: 1321493 bytes
+- ratio Fox/TGA: 31%
+- ratio Fox/PNG: 73%
+
+### qoi_textures_photo/IMGP5514_seamless_2.png
+
+- TGA size: 4194322 bytes
+- PNG size: 1628054 bytes
+- Fox size: 1283546 bytes
+- ratio Fox/TGA: 30%
+- ratio Fox/PNG: 78%
+
+### qoi_textures_photo/IMGP5525_seamless.png
+
+- TGA size: 4194322 bytes
+- PNG size: 2235848 bytes
+- Fox size: 1567473 bytes
+- ratio Fox/TGA: 37%
+- ratio Fox/PNG: 70%
+
+### qoi_textures_photo/IMGP5539_almost_seamless.png
+
+- TGA size: 4194322 bytes
+- PNG size: 1602297 bytes
+- Fox size: 1384582 bytes
+- ratio Fox/TGA: 33%
+- ratio Fox/PNG: 86%
+
+### qoi_textures_photo/IMGP5546_seamless.png
+
+- TGA size: 4194322 bytes
+- PNG size: 1143374 bytes
+- Fox size: 1029250 bytes
+- ratio Fox/TGA: 24%
+- ratio Fox/PNG: 90%
+
+### qoi_textures_photo/rock01.png
+
+- TGA size: 4194322 bytes
+- PNG size: 2081431 bytes
+- Fox size: 1546564 bytes
+- ratio Fox/TGA: 36%
+- ratio Fox/PNG: 74%
+
+### qoi_textures_photo/rock02.png
+
+- TGA size: 4194322 bytes
+- PNG size: 2366053 bytes
+- Fox size: 1700589 bytes
+- ratio Fox/TGA: 40%
+- ratio Fox/PNG: 71%
+
+### qoi_textures_photo/rock02_2.png
+
+- TGA size: 4194322 bytes
+- PNG size: 2397423 bytes
+- Fox size: 1706892 bytes
+- ratio Fox/TGA: 40%
+- ratio Fox/PNG: 71%
+
+### qoi_textures_photo/rock03.png
+
+- TGA size: 4194322 bytes
+- PNG size: 2048185 bytes
+- Fox size: 1664856 bytes
+- ratio Fox/TGA: 39%
+- ratio Fox/PNG: 81%
+
+## QOI Benchmark Suite - Screenshots Web ([source](https://qoiformat.org/benchmark/))
+
+### qoi_screenshots_web/amazon.com.png
+
+- TGA size: 32021462 bytes
+- PNG size: 6381202 bytes
+- Fox size: 3849908 bytes
+- ratio Fox/TGA: 12%
+- ratio Fox/PNG: 60%
+
+### qoi_screenshots_web/apple.com.png
+
+- TGA size: 24973278 bytes
+- PNG size: 2360762 bytes
+- Fox size: 1542577 bytes
+- ratio Fox/TGA: 6%
+- ratio Fox/PNG: 65%
+
+### qoi_screenshots_web/cnn.com.png
+
+- TGA size: 27525750 bytes
+- PNG size: 2748636 bytes
+- Fox size: 1513328 bytes
+- ratio Fox/TGA: 5%
+- ratio Fox/PNG: 55%
+
+### qoi_screenshots_web/creativecommons.org.png
+
+- TGA size: 27012234 bytes
+- PNG size: 6292865 bytes
+- Fox size: 3876670 bytes
+- ratio Fox/TGA: 14%
+- ratio Fox/PNG: 61%
+
+### qoi_screenshots_web/duckduckgo.com.png
+
+- TGA size: 15094266 bytes
+- PNG size: 289177 bytes
+- Fox size: 202311 bytes
+- ratio Fox/TGA: 1%
+- ratio Fox/PNG: 69%
+
+### qoi_screenshots_web/en.wikipedia.org.png
+
+- TGA size: 15419890 bytes
+- PNG size: 1316655 bytes
+- Fox size: 1022381 bytes
+- ratio Fox/TGA: 6%
+- ratio Fox/PNG: 77%
+
+### qoi_screenshots_web/imdb.com.png
+
+- TGA size: 33828150 bytes
+- PNG size: 3012744 bytes
+- Fox size: 1746469 bytes
+- ratio Fox/TGA: 5%
+- ratio Fox/PNG: 57%
+
+### qoi_screenshots_web/microsoft.com.png
+
+- TGA size: 17478674 bytes
+- PNG size: 1990915 bytes
+- Fox size: 1229994 bytes
+- ratio Fox/TGA: 7%
+- ratio Fox/PNG: 61%
+
+### qoi_screenshots_web/news.ycombinator.com.png
+
+- TGA size: 7685018 bytes
+- PNG size: 266815 bytes
+- Fox size: 162079 bytes
+- ratio Fox/TGA: 2%
+- ratio Fox/PNG: 60%
+
+### qoi_screenshots_web/nytimes.com.png
+
+- TGA size: 30356578 bytes
+- PNG size: 3331485 bytes
+- Fox size: 1892152 bytes
+- ratio Fox/TGA: 6%
+- ratio Fox/PNG: 56%
+
+### qoi_screenshots_web/phoboslab.org.png
+
+- TGA size: 108543102 bytes
+- PNG size: 6001461 bytes
+- Fox size: 6081261 bytes
+- ratio Fox/TGA: 5%
+- ratio Fox/PNG: 101%
+
+### qoi_screenshots_web/reddit.com.png
+
+- TGA size: 42058034 bytes
+- PNG size: 3825292 bytes
+- Fox size: 2177378 bytes
+- ratio Fox/TGA: 5%
+- ratio Fox/PNG: 56%
+
+### qoi_screenshots_web/stripe.com.png
+
+- TGA size: 34678974 bytes
+- PNG size: 1118955 bytes
+- Fox size: 993641 bytes
+- ratio Fox/TGA: 2%
+- ratio Fox/PNG: 88%
+
+### qoi_screenshots_web/sublime.png
+
+- TGA size: 38356434 bytes
+- PNG size: 1335714 bytes
+- Fox size: 981126 bytes
+- ratio Fox/TGA: 2%
+- ratio Fox/PNG: 73%
+
+## QOI Benchmark Suite - Photo Wikipedia ([source](https://qoiformat.org/benchmark/))
+
+### qoi_photo_wikipedia/001.png
+
+- TGA size: 4338418 bytes
+- PNG size: 1616664 bytes
+- Fox size: 1452039 bytes
+- ratio Fox/TGA: 33%
+- ratio Fox/PNG: 89%
+
+### qoi_photo_wikipedia/002.png
+
+- TGA size: 4062258 bytes
+- PNG size: 1713213 bytes
+- Fox size: 1662567 bytes
+- ratio Fox/TGA: 40%
+- ratio Fox/PNG: 97%
+
+### qoi_photo_wikipedia/003.png
+
+- TGA size: 4193138 bytes
+- PNG size: 1525572 bytes
+- Fox size: 1526374 bytes
+- ratio Fox/TGA: 36%
+- ratio Fox/PNG: 100%
+
+### qoi_photo_wikipedia/004.png
+
+- TGA size: 4078386 bytes
+- PNG size: 2289144 bytes
+- Fox size: 2013848 bytes
+- ratio Fox/TGA: 49%
+- ratio Fox/PNG: 87%
+
+### qoi_photo_wikipedia/005.png
+
+- TGA size: 4008210 bytes
+- PNG size: 2122983 bytes
+- Fox size: 2033921 bytes
+- ratio Fox/TGA: 50%
+- ratio Fox/PNG: 95%
+
+### qoi_photo_wikipedia/006.png
+
+- TGA size: 5256594 bytes
+- PNG size: 2246045 bytes
+- Fox size: 1990704 bytes
+- ratio Fox/TGA: 37%
+- ratio Fox/PNG: 88%
+
+### qoi_photo_wikipedia/007.png
+
+- TGA size: 3978258 bytes
+- PNG size: 1926046 bytes
+- Fox size: 1643045 bytes
+- ratio Fox/TGA: 41%
+- ratio Fox/PNG: 85%
+
+### qoi_photo_wikipedia/008.png
+
+- TGA size: 3953682 bytes
+- PNG size: 1344960 bytes
+- Fox size: 1297348 bytes
+- ratio Fox/TGA: 32%
+- ratio Fox/PNG: 96%
+
+### qoi_photo_wikipedia/009.png
+
+- TGA size: 4021266 bytes
+- PNG size: 1762007 bytes
+- Fox size: 1531390 bytes
+- ratio Fox/TGA: 38%
+- ratio Fox/PNG: 86%
+
+### qoi_photo_wikipedia/010.png
+
+- TGA size: 3696274 bytes
+- PNG size: 1804339 bytes
+- Fox size: 1737635 bytes
+- ratio Fox/TGA: 47%
+- ratio Fox/PNG: 96%
+
+### qoi_photo_wikipedia/011.png
+
+- TGA size: 4704978 bytes
+- PNG size: 1794310 bytes
+- Fox size: 1882646 bytes
+- ratio Fox/TGA: 40%
+- ratio Fox/PNG: 104%
+
+### qoi_photo_wikipedia/012.png
+
+- TGA size: 3865650 bytes
+- PNG size: 2170739 bytes
+- Fox size: 2098143 bytes
+- ratio Fox/TGA: 54%
+- ratio Fox/PNG: 96%
+
+### qoi_photo_wikipedia/013.png
+
+- TGA size: 4770706 bytes
+- PNG size: 2391936 bytes
+- Fox size: 2158396 bytes
+- ratio Fox/TGA: 45%
+- ratio Fox/PNG: 90%
+
+### qoi_photo_wikipedia/014.png
+
+- TGA size: 3962386 bytes
+- PNG size: 1755987 bytes
+- Fox size: 1817690 bytes
+- ratio Fox/TGA: 45%
+- ratio Fox/PNG: 103%
+
+### qoi_photo_wikipedia/015.png
+
+- TGA size: 3960018 bytes
+- PNG size: 1929422 bytes
+- Fox size: 1646336 bytes
+- ratio Fox/TGA: 41%
+- ratio Fox/PNG: 85%
+
+### qoi_photo_wikipedia/016.png
+
+- TGA size: 3717010 bytes
+- PNG size: 1009685 bytes
+- Fox size: 1122061 bytes
+- ratio Fox/TGA: 30%
+- ratio Fox/PNG: 111%
+
+### qoi_photo_wikipedia/017.png
+
+- TGA size: 4544898 bytes
+- PNG size: 1662824 bytes
+- Fox size: 1732928 bytes
+- ratio Fox/TGA: 38%
+- ratio Fox/PNG: 104%
+
+### qoi_photo_wikipedia/018.png
+
+- TGA size: 5237890 bytes
+- PNG size: 2152214 bytes
+- Fox size: 2054732 bytes
+- ratio Fox/TGA: 39%
+- ratio Fox/PNG: 95%
+
+### qoi_photo_wikipedia/019.png
+
+- TGA size: 4804818 bytes
+- PNG size: 1747944 bytes
+- Fox size: 1986282 bytes
+- ratio Fox/TGA: 41%
+- ratio Fox/PNG: 113%
+
+### qoi_photo_wikipedia/020.png
+
+- TGA size: 4478994 bytes
+- PNG size: 1961459 bytes
+- Fox size: 1883013 bytes
+- ratio Fox/TGA: 42%
+- ratio Fox/PNG: 96%
+
+### qoi_photo_wikipedia/021.png
+
+- TGA size: 5057490 bytes
+- PNG size: 2212986 bytes
+- Fox size: 2155208 bytes
+- ratio Fox/TGA: 42%
+- ratio Fox/PNG: 97%
+
+### qoi_photo_wikipedia/022.png
+
+- TGA size: 3775698 bytes
+- PNG size: 2002984 bytes
+- Fox size: 1919499 bytes
+- ratio Fox/TGA: 50%
+- ratio Fox/PNG: 95%
+
+### qoi_photo_wikipedia/023.png
+
+- TGA size: 4478994 bytes
+- PNG size: 1527956 bytes
+- Fox size: 1555155 bytes
+- ratio Fox/TGA: 34%
+- ratio Fox/PNG: 101%
+
+### qoi_photo_wikipedia/024.png
+
+- TGA size: 4450962 bytes
+- PNG size: 1965768 bytes
+- Fox size: 1673280 bytes
+- ratio Fox/TGA: 37%
+- ratio Fox/PNG: 85%
+
+### qoi_photo_wikipedia/025.png
+
+- TGA size: 5141170 bytes
+- PNG size: 2241618 bytes
+- Fox size: 2035649 bytes
+- ratio Fox/TGA: 39%
+- ratio Fox/PNG: 90%
+
+### qoi_photo_wikipedia/026.png
+
+- TGA size: 4160018 bytes
+- PNG size: 2110391 bytes
+- Fox size: 1990186 bytes
+- ratio Fox/TGA: 47%
+- ratio Fox/PNG: 94%
+
+### qoi_photo_wikipedia/027.png
+
+- TGA size: 4469778 bytes
+- PNG size: 2039457 bytes
+- Fox size: 1908021 bytes
+- ratio Fox/TGA: 42%
+- ratio Fox/PNG: 93%
+
+### qoi_photo_wikipedia/028.png
+
+- TGA size: 4021266 bytes
+- PNG size: 1661136 bytes
+- Fox size: 1962628 bytes
+- ratio Fox/TGA: 48%
+- ratio Fox/PNG: 118%
+
+### qoi_photo_wikipedia/029.png
+
+- TGA size: 4478994 bytes
+- PNG size: 2072449 bytes
+- Fox size: 2119497 bytes
+- ratio Fox/TGA: 47%
+- ratio Fox/PNG: 102%
+
+### qoi_photo_wikipedia/030.png
+
+- TGA size: 5138578 bytes
+- PNG size: 1864601 bytes
+- Fox size: 1895837 bytes
+- ratio Fox/TGA: 36%
+- ratio Fox/PNG: 101%
+
+### qoi_photo_wikipedia/031.png
+
+- TGA size: 4127778 bytes
+- PNG size: 1920302 bytes
+- Fox size: 1832027 bytes
+- ratio Fox/TGA: 44%
+- ratio Fox/PNG: 95%
+
+### qoi_photo_wikipedia/032.png
+
+- TGA size: 4478994 bytes
+- PNG size: 1358489 bytes
+- Fox size: 1297344 bytes
+- ratio Fox/TGA: 28%
+- ratio Fox/PNG: 95%
+
+### qoi_photo_wikipedia/033.png
+
+- TGA size: 3824658 bytes
+- PNG size: 1562915 bytes
+- Fox size: 1502984 bytes
+- ratio Fox/TGA: 39%
+- ratio Fox/PNG: 96%
+
+### qoi_photo_wikipedia/034.png
+
+- TGA size: 3898642 bytes
+- PNG size: 1520514 bytes
+- Fox size: 1497974 bytes
+- ratio Fox/TGA: 38%
+- ratio Fox/PNG: 98%
+
+### qoi_photo_wikipedia/035.png
+
+- TGA size: 4481074 bytes
+- PNG size: 1610751 bytes
+- Fox size: 1697714 bytes
+- ratio Fox/TGA: 37%
+- ratio Fox/PNG: 105%
+
+### qoi_photo_wikipedia/036.png
+
+- TGA size: 3727170 bytes
+- PNG size: 1806256 bytes
+- Fox size: 1742598 bytes
+- ratio Fox/TGA: 46%
+- ratio Fox/PNG: 96%
+
+### qoi_photo_wikipedia/037.png
+
+- TGA size: 4478994 bytes
+- PNG size: 1797482 bytes
+- Fox size: 1997572 bytes
+- ratio Fox/TGA: 44%
+- ratio Fox/PNG: 111%
+
+### qoi_photo_wikipedia/038.png
+
+- TGA size: 3840018 bytes
+- PNG size: 1085056 bytes
+- Fox size: 1113490 bytes
+- ratio Fox/TGA: 28%
+- ratio Fox/PNG: 102%
+
+### qoi_photo_wikipedia/039.png
+
+- TGA size: 4478994 bytes
+- PNG size: 1957790 bytes
+- Fox size: 1857557 bytes
+- ratio Fox/TGA: 41%
+- ratio Fox/PNG: 94%
+
+### qoi_photo_wikipedia/040.png
+
+- TGA size: 4478994 bytes
+- PNG size: 1638402 bytes
+- Fox size: 1636069 bytes
+- ratio Fox/TGA: 36%
+- ratio Fox/PNG: 99%
+
+### qoi_photo_wikipedia/041.png
+
+- TGA size: 4028882 bytes
+- PNG size: 1300001 bytes
+- Fox size: 1233748 bytes
+- ratio Fox/TGA: 30%
+- ratio Fox/PNG: 94%
+
+### qoi_photo_wikipedia/042.png
+
+- TGA size: 4680018 bytes
+- PNG size: 1826109 bytes
+- Fox size: 1759399 bytes
+- ratio Fox/TGA: 37%
+- ratio Fox/PNG: 96%
+
+### qoi_photo_wikipedia/043.png
+
+- TGA size: 5256594 bytes
+- PNG size: 2035095 bytes
+- Fox size: 1772822 bytes
+- ratio Fox/TGA: 33%
+- ratio Fox/PNG: 87%
+
+### qoi_photo_wikipedia/044.png
+
+- TGA size: 5072274 bytes
+- PNG size: 1829920 bytes
+- Fox size: 1779302 bytes
+- ratio Fox/TGA: 35%
+- ratio Fox/PNG: 97%
+
+### qoi_photo_wikipedia/045.png
+
+- TGA size: 4478994 bytes
+- PNG size: 1297590 bytes
+- Fox size: 1491723 bytes
+- ratio Fox/TGA: 33%
+- ratio Fox/PNG: 114%
+
+### qoi_photo_wikipedia/046.png
+
+- TGA size: 3694098 bytes
+- PNG size: 1679421 bytes
+- Fox size: 1699955 bytes
+- ratio Fox/TGA: 46%
+- ratio Fox/PNG: 101%
+
+### qoi_photo_wikipedia/047.png
+
+- TGA size: 4353682 bytes
+- PNG size: 1736783 bytes
+- Fox size: 1621701 bytes
+- ratio Fox/TGA: 37%
+- ratio Fox/PNG: 93%
+
+### qoi_photo_wikipedia/048.png
+
+- TGA size: 3753618 bytes
+- PNG size: 1843434 bytes
+- Fox size: 1604400 bytes
+- ratio Fox/TGA: 42%
+- ratio Fox/PNG: 87%
+
+### qoi_photo_wikipedia/049.png
+
+- TGA size: 4622418 bytes
+- PNG size: 1906602 bytes
+- Fox size: 2142447 bytes
+- ratio Fox/TGA: 46%
+- ratio Fox/PNG: 112%

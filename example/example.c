@@ -61,23 +61,23 @@ static int main_encode(int argc, char **argv) {
     // initialize fox
     struct fox fox = { .callback = encode_out, .user = out };
 
-    for (int y = 0; y < h; ++y) {
-        for (int x = 0; x < w; ++x) {
-            unsigned long r, g, b, a;
+    for (unsigned int y = 0; y < h; ++y) {
+        for (unsigned int x = 0; x < w; ++x) {
+            struct fox_argb color;
 
             // read TGA pixel
             if (type == 3) {
-                g = b = r = fgetc(in);
-                a = 0xFF;
+                color.g = color.b = color.r = fgetc(in);
+                color.a = 0xFF;
             } else {
-                b = fgetc(in);
-                g = fgetc(in);
-                r = fgetc(in);
-                a = depth == 32 ? fgetc(in) : 0xFF;
+                color.b = fgetc(in);
+                color.g = fgetc(in);
+                color.r = fgetc(in);
+                color.a = depth == 32 ? fgetc(in) : 0xFF;
             }
 
             // write current pixel into the stream
-            fox_write(&fox, a << 24 | r << 16 | g << 8 | b);
+            fox_write(&fox, color);
         }
     }
 
@@ -149,11 +149,11 @@ static int main_decode(int argc, char **argv) {
     for (unsigned int y = 0; y < h; ++y) {
         for (unsigned int x = 0; x < w; ++x) {
             // read a pixel from the stream
-            unsigned long color = fox_read(&fox);
-            fputc(color >>  0 & 0xFF, out);
-            fputc(color >>  8 & 0xFF, out);
-            fputc(color >> 16 & 0xFF, out);
-            fputc(color >> 24 & 0xFF, out);
+            struct fox_argb color = fox_read(&fox);
+            fputc(color.b, out);
+            fputc(color.g, out);
+            fputc(color.r, out);
+            fputc(color.a, out);
         }
     }
 
