@@ -1,17 +1,16 @@
 #include <fox.h>
 
 static void fox_out(struct fox *fox) {
-    fox->callback(fox->lower >> 16 & 0xFF, fox->user);
-    fox->lower &= 0xFFFF, fox->upper &= 0xFFFF;
-    fox->lower <<= 8,     fox->upper <<= 8;
+    fox->callback(fox->lower >> 8, fox->user);
+    fox->lower <<= 8, fox->upper <<= 8;
 }
 
 static void fox_enc_bit(struct fox *fox, unsigned int bit, unsigned int ctx) {
-    while ((fox->lower ^ fox->upper) >= 0xFF0000) fox_out(fox);
+    while ((fox->lower ^ fox->upper) >= 0xFF00u) fox_out(fox);
 
-    signed   char *mod = fox->model + ctx, prb = *mod;
-    unsigned long  rng = 0xFFFFFF - fox->lower - fox->upper;
-    unsigned long  mid = rng * (prb + 128) >> 8;
+    signed char *mod = fox->model + ctx, prb = *mod;
+    unsigned int rng = 0xFFFFu - fox->lower - fox->upper;
+    unsigned int mid = (unsigned long) rng * (prb + 128) >> 8;
 
     if (bit) fox->upper += rng - mid, *mod = prb + ((128 - prb) >> 3);
         else fox->lower += mid + 1,   *mod = prb - ((128 + prb) >> 3);
@@ -51,5 +50,5 @@ void fox_write(struct fox *fox, struct fox_argb color) {
 
 void fox_close(struct fox *fox) {
     if (fox->run) fox_flush_run(fox);
-    for (int i = 3; i--;) fox_out(fox);
+    fox_out(fox), fox_out(fox);
 }

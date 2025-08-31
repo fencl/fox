@@ -8,7 +8,7 @@ This makes fox a good choice for embedding into a custom container format.
 
 ## Tiny
 
-Both encoder and decoder are currenty written in under 55 LOC.
+Both encoder and decoder are currenty written in under 54 LOC.
 
 ## Dependencies
 

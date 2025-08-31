@@ -1,17 +1,16 @@
 #include <fox.h>
 
 static void fox_in(struct fox *fox) {
-    fox->input &= 0xFFFF, fox->lower &= 0xFFFF, fox->upper &= 0xFFFF;
-    fox->input <<= 8,     fox->lower <<= 8,     fox->upper <<= 8;
+    fox->input <<= 8, fox->lower <<= 8, fox->upper <<= 8;
     fox->input |= fox->callback(0, fox->user);
 }
 
 static unsigned int fox_dec_bit(struct fox *fox, unsigned int ctx) {
-    while ((fox->lower ^ fox->upper) >= 0xFF0000) fox_in(fox);
+    while ((fox->lower ^ fox->upper) >= 0xFF00u) fox_in(fox);
 
-    signed   char *mod = fox->model + ctx, prb = *mod;
-    unsigned long  rng = 0xFFFFFF - fox->lower - fox->upper;
-    unsigned long  mid = rng * (prb + 128) >> 8;
+    signed char *mod = fox->model + ctx, prb = *mod;
+    unsigned int rng = 0xFFFFu - fox->lower - fox->upper;
+    unsigned int mid = (unsigned long) rng * (prb + 128) >> 8;
 
     return fox->input <= fox->lower + mid
         ? (fox->upper += rng - mid, *mod = prb + ((128 - prb) >> 3), 1)
@@ -25,7 +24,7 @@ static unsigned int fox_dec(struct fox *fox, unsigned int mod) {
 }
 
 void fox_open(struct fox *fox) {
-    for (int i = 3; i--;) fox_in(fox);
+    fox_in(fox), fox_in(fox);
 }
 
 struct fox_argb fox_read(struct fox *fox) {

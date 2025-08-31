@@ -9,7 +9,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1048594 bytes
 - PNG size: 385490 bytes
-- Fox size: 385626 bytes
+- Fox size: 386588 bytes
 - ratio Fox/TGA: 36%
 - ratio Fox/PNG: 100%
 
@@ -19,7 +19,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 736501 bytes
-- Fox size: 604581 bytes
+- Fox size: 605910 bytes
 - ratio Fox/TGA: 38%
 - ratio Fox/PNG: 82%
 
@@ -27,15 +27,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 617995 bytes
-- Fox size: 537084 bytes
+- Fox size: 538289 bytes
 - ratio Fox/TGA: 34%
-- ratio Fox/PNG: 86%
+- ratio Fox/PNG: 87%
 
 ### kodak/kodim03.png
 
 - TGA size: 1572882 bytes
 - PNG size: 502888 bytes
-- Fox size: 448709 bytes
+- Fox size: 449707 bytes
 - ratio Fox/TGA: 28%
 - ratio Fox/PNG: 89%
 
@@ -43,7 +43,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 637432 bytes
-- Fox size: 568146 bytes
+- Fox size: 569626 bytes
 - ratio Fox/TGA: 36%
 - ratio Fox/PNG: 89%
 
@@ -51,7 +51,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 785610 bytes
-- Fox size: 670760 bytes
+- Fox size: 672240 bytes
 - ratio Fox/TGA: 42%
 - ratio Fox/PNG: 85%
 
@@ -59,7 +59,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 618959 bytes
-- Fox size: 530229 bytes
+- Fox size: 531550 bytes
 - ratio Fox/TGA: 33%
 - ratio Fox/PNG: 85%
 
@@ -67,15 +67,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 566322 bytes
-- Fox size: 486526 bytes
-- ratio Fox/TGA: 30%
-- ratio Fox/PNG: 85%
+- Fox size: 487623 bytes
+- ratio Fox/TGA: 31%
+- ratio Fox/PNG: 86%
 
 ### kodak/kodim08.png
 
 - TGA size: 1572882 bytes
 - PNG size: 788470 bytes
-- Fox size: 690496 bytes
+- Fox size: 691903 bytes
 - ratio Fox/TGA: 43%
 - ratio Fox/PNG: 87%
 
@@ -83,7 +83,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 582899 bytes
-- Fox size: 493489 bytes
+- Fox size: 494556 bytes
 - ratio Fox/TGA: 31%
 - ratio Fox/PNG: 84%
 
@@ -91,23 +91,23 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 593463 bytes
-- Fox size: 534506 bytes
-- ratio Fox/TGA: 33%
+- Fox size: 535821 bytes
+- ratio Fox/TGA: 34%
 - ratio Fox/PNG: 90%
 
 ### kodak/kodim11.png
 
 - TGA size: 1572882 bytes
 - PNG size: 621023 bytes
-- Fox size: 520700 bytes
+- Fox size: 521910 bytes
 - ratio Fox/TGA: 33%
-- ratio Fox/PNG: 83%
+- ratio Fox/PNG: 84%
 
 ### kodak/kodim12.png
 
 - TGA size: 1572882 bytes
 - PNG size: 531024 bytes
-- Fox size: 462235 bytes
+- Fox size: 463249 bytes
 - ratio Fox/TGA: 29%
 - ratio Fox/PNG: 87%
 
@@ -115,7 +115,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 822712 bytes
-- Fox size: 683674 bytes
+- Fox size: 685283 bytes
 - ratio Fox/TGA: 43%
 - ratio Fox/PNG: 83%
 
@@ -123,7 +123,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 692201 bytes
-- Fox size: 590176 bytes
+- Fox size: 591574 bytes
 - ratio Fox/TGA: 37%
 - ratio Fox/PNG: 85%
 
@@ -131,15 +131,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 612582 bytes
-- Fox size: 544027 bytes
+- Fox size: 545276 bytes
 - ratio Fox/TGA: 34%
-- ratio Fox/PNG: 88%
+- ratio Fox/PNG: 89%
 
 ### kodak/kodim16.png
 
 - TGA size: 1572882 bytes
 - PNG size: 534247 bytes
-- Fox size: 456894 bytes
+- Fox size: 458024 bytes
 - ratio Fox/TGA: 29%
 - ratio Fox/PNG: 85%
 
@@ -147,7 +147,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 602078 bytes
-- Fox size: 520202 bytes
+- Fox size: 521551 bytes
 - ratio Fox/TGA: 33%
 - ratio Fox/PNG: 86%
 
@@ -155,15 +155,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 780947 bytes
-- Fox size: 675921 bytes
-- ratio Fox/TGA: 42%
+- Fox size: 677503 bytes
+- ratio Fox/TGA: 43%
 - ratio Fox/PNG: 86%
 
 ### kodak/kodim19.png
 
 - TGA size: 1572882 bytes
 - PNG size: 671476 bytes
-- Fox size: 572816 bytes
+- Fox size: 574263 bytes
 - ratio Fox/TGA: 36%
 - ratio Fox/PNG: 85%
 
@@ -171,7 +171,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 492462 bytes
-- Fox size: 406279 bytes
+- Fox size: 407154 bytes
 - ratio Fox/TGA: 25%
 - ratio Fox/PNG: 82%
 
@@ -179,7 +179,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 637051 bytes
-- Fox size: 520788 bytes
+- Fox size: 521980 bytes
 - ratio Fox/TGA: 33%
 - ratio Fox/PNG: 81%
 
@@ -187,15 +187,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 701970 bytes
-- Fox size: 631649 bytes
+- Fox size: 633195 bytes
 - ratio Fox/TGA: 40%
-- ratio Fox/PNG: 89%
+- ratio Fox/PNG: 90%
 
 ### kodak/kodim23.png
 
 - TGA size: 1572882 bytes
 - PNG size: 557596 bytes
-- Fox size: 535839 bytes
+- Fox size: 537370 bytes
 - ratio Fox/TGA: 34%
 - ratio Fox/PNG: 96%
 
@@ -203,7 +203,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1572882 bytes
 - PNG size: 706397 bytes
-- Fox size: 600876 bytes
+- Fox size: 602220 bytes
 - ratio Fox/TGA: 38%
 - ratio Fox/PNG: 85%
 
@@ -213,7 +213,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 481618 bytes
 - PNG size: 113340 bytes
-- Fox size: 101229 bytes
+- Fox size: 101479 bytes
 - ratio Fox/TGA: 21%
 - ratio Fox/PNG: 89%
 
@@ -221,7 +221,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 609898 bytes
 - PNG size: 39063 bytes
-- Fox size: 45763 bytes
+- Fox size: 45822 bytes
 - ratio Fox/TGA: 7%
 - ratio Fox/PNG: 117%
 
@@ -229,7 +229,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 1920018 bytes
 - PNG size: 218662 bytes
-- Fox size: 201807 bytes
+- Fox size: 202204 bytes
 - ratio Fox/TGA: 10%
 - ratio Fox/PNG: 92%
 
@@ -237,7 +237,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 274510 bytes
 - PNG size: 50397 bytes
-- Fox size: 42791 bytes
+- Fox size: 42811 bytes
 - ratio Fox/TGA: 15%
 - ratio Fox/PNG: 84%
 
@@ -245,7 +245,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 360018 bytes
 - PNG size: 129875 bytes
-- Fox size: 143367 bytes
+- Fox size: 143368 bytes
 - ratio Fox/TGA: 39%
 - ratio Fox/PNG: 110%
 
@@ -255,15 +255,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 233298 bytes
 - PNG size: 5913 bytes
-- Fox size: 11169 bytes
+- Fox size: 11188 bytes
 - ratio Fox/TGA: 4%
-- ratio Fox/PNG: 188%
+- ratio Fox/PNG: 189%
 
 ### kenney_pixel_platformer/tilemap-backgrounds_packed.png
 
 - TGA size: 55314 bytes
 - PNG size: 521 bytes
-- Fox size: 665 bytes
+- Fox size: 666 bytes
 - ratio Fox/TGA: 1%
 - ratio Fox/PNG: 127%
 
@@ -271,7 +271,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 62226 bytes
 - PNG size: 1990 bytes
-- Fox size: 3328 bytes
+- Fox size: 3335 bytes
 - ratio Fox/TGA: 5%
 - ratio Fox/PNG: 167%
 
@@ -281,7 +281,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 10293950 bytes
 - PNG size: 533004 bytes
-- Fox size: 576984 bytes
+- Fox size: 578479 bytes
 - ratio Fox/TGA: 5%
 - ratio Fox/PNG: 108%
 
@@ -291,15 +291,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4194322 bytes
 - PNG size: 2582326 bytes
-- Fox size: 2138134 bytes
-- ratio Fox/TGA: 50%
+- Fox size: 2142497 bytes
+- ratio Fox/TGA: 51%
 - ratio Fox/PNG: 82%
 
 ### qoi_textures_photo/grass1.png
 
 - TGA size: 4194322 bytes
 - PNG size: 2851919 bytes
-- Fox size: 2115621 bytes
+- Fox size: 2120143 bytes
 - ratio Fox/TGA: 50%
 - ratio Fox/PNG: 74%
 
@@ -307,15 +307,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4194322 bytes
 - PNG size: 2015771 bytes
-- Fox size: 1465508 bytes
-- ratio Fox/TGA: 34%
+- Fox size: 1470469 bytes
+- ratio Fox/TGA: 35%
 - ratio Fox/PNG: 72%
 
 ### qoi_textures_photo/IMGP5482_seamless.png
 
 - TGA size: 4194322 bytes
 - PNG size: 2212110 bytes
-- Fox size: 1530355 bytes
+- Fox size: 1535413 bytes
 - ratio Fox/TGA: 36%
 - ratio Fox/PNG: 69%
 
@@ -323,7 +323,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4194322 bytes
 - PNG size: 1284559 bytes
-- Fox size: 1161505 bytes
+- Fox size: 1164587 bytes
 - ratio Fox/TGA: 27%
 - ratio Fox/PNG: 90%
 
@@ -331,15 +331,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4194322 bytes
 - PNG size: 938069 bytes
-- Fox size: 966136 bytes
+- Fox size: 968376 bytes
 - ratio Fox/TGA: 23%
-- ratio Fox/PNG: 102%
+- ratio Fox/PNG: 103%
 
 ### qoi_textures_photo/IMGP5493_seamless_2.png
 
 - TGA size: 4194322 bytes
 - PNG size: 939469 bytes
-- Fox size: 1000366 bytes
+- Fox size: 1002695 bytes
 - ratio Fox/TGA: 23%
 - ratio Fox/PNG: 106%
 
@@ -347,7 +347,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4194322 bytes
 - PNG size: 1660371 bytes
-- Fox size: 1248243 bytes
+- Fox size: 1251916 bytes
 - ratio Fox/TGA: 29%
 - ratio Fox/PNG: 75%
 
@@ -355,15 +355,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4194322 bytes
 - PNG size: 2099109 bytes
-- Fox size: 1422946 bytes
-- ratio Fox/TGA: 33%
+- Fox size: 1427313 bytes
+- ratio Fox/TGA: 34%
 - ratio Fox/PNG: 67%
 
 ### qoi_textures_photo/IMGP5505_seamless.png
 
 - TGA size: 4194322 bytes
 - PNG size: 1933044 bytes
-- Fox size: 1498921 bytes
+- Fox size: 1504175 bytes
 - ratio Fox/TGA: 35%
 - ratio Fox/PNG: 77%
 
@@ -371,7 +371,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4194322 bytes
 - PNG size: 2031208 bytes
-- Fox size: 1407508 bytes
+- Fox size: 1412002 bytes
 - ratio Fox/TGA: 33%
 - ratio Fox/PNG: 69%
 
@@ -379,7 +379,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4194322 bytes
 - PNG size: 1804014 bytes
-- Fox size: 1321493 bytes
+- Fox size: 1326075 bytes
 - ratio Fox/TGA: 31%
 - ratio Fox/PNG: 73%
 
@@ -387,15 +387,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4194322 bytes
 - PNG size: 1628054 bytes
-- Fox size: 1283546 bytes
+- Fox size: 1288242 bytes
 - ratio Fox/TGA: 30%
-- ratio Fox/PNG: 78%
+- ratio Fox/PNG: 79%
 
 ### qoi_textures_photo/IMGP5525_seamless.png
 
 - TGA size: 4194322 bytes
 - PNG size: 2235848 bytes
-- Fox size: 1567473 bytes
+- Fox size: 1572518 bytes
 - ratio Fox/TGA: 37%
 - ratio Fox/PNG: 70%
 
@@ -403,7 +403,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4194322 bytes
 - PNG size: 1602297 bytes
-- Fox size: 1384582 bytes
+- Fox size: 1389845 bytes
 - ratio Fox/TGA: 33%
 - ratio Fox/PNG: 86%
 
@@ -411,7 +411,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4194322 bytes
 - PNG size: 1143374 bytes
-- Fox size: 1029250 bytes
+- Fox size: 1031456 bytes
 - ratio Fox/TGA: 24%
 - ratio Fox/PNG: 90%
 
@@ -419,7 +419,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4194322 bytes
 - PNG size: 2081431 bytes
-- Fox size: 1546564 bytes
+- Fox size: 1551715 bytes
 - ratio Fox/TGA: 36%
 - ratio Fox/PNG: 74%
 
@@ -427,15 +427,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4194322 bytes
 - PNG size: 2366053 bytes
-- Fox size: 1700589 bytes
+- Fox size: 1705865 bytes
 - ratio Fox/TGA: 40%
-- ratio Fox/PNG: 71%
+- ratio Fox/PNG: 72%
 
 ### qoi_textures_photo/rock02_2.png
 
 - TGA size: 4194322 bytes
 - PNG size: 2397423 bytes
-- Fox size: 1706892 bytes
+- Fox size: 1712191 bytes
 - ratio Fox/TGA: 40%
 - ratio Fox/PNG: 71%
 
@@ -443,7 +443,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4194322 bytes
 - PNG size: 2048185 bytes
-- Fox size: 1664856 bytes
+- Fox size: 1670055 bytes
 - ratio Fox/TGA: 39%
 - ratio Fox/PNG: 81%
 
@@ -453,7 +453,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 32021462 bytes
 - PNG size: 6381202 bytes
-- Fox size: 3849908 bytes
+- Fox size: 3857567 bytes
 - ratio Fox/TGA: 12%
 - ratio Fox/PNG: 60%
 
@@ -461,7 +461,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 24973278 bytes
 - PNG size: 2360762 bytes
-- Fox size: 1542577 bytes
+- Fox size: 1545150 bytes
 - ratio Fox/TGA: 6%
 - ratio Fox/PNG: 65%
 
@@ -469,7 +469,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 27525750 bytes
 - PNG size: 2748636 bytes
-- Fox size: 1513328 bytes
+- Fox size: 1516664 bytes
 - ratio Fox/TGA: 5%
 - ratio Fox/PNG: 55%
 
@@ -477,7 +477,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 27012234 bytes
 - PNG size: 6292865 bytes
-- Fox size: 3876670 bytes
+- Fox size: 3884565 bytes
 - ratio Fox/TGA: 14%
 - ratio Fox/PNG: 61%
 
@@ -485,15 +485,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 15094266 bytes
 - PNG size: 289177 bytes
-- Fox size: 202311 bytes
+- Fox size: 202499 bytes
 - ratio Fox/TGA: 1%
-- ratio Fox/PNG: 69%
+- ratio Fox/PNG: 70%
 
 ### qoi_screenshots_web/en.wikipedia.org.png
 
 - TGA size: 15419890 bytes
 - PNG size: 1316655 bytes
-- Fox size: 1022381 bytes
+- Fox size: 1023197 bytes
 - ratio Fox/TGA: 6%
 - ratio Fox/PNG: 77%
 
@@ -501,15 +501,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 33828150 bytes
 - PNG size: 3012744 bytes
-- Fox size: 1746469 bytes
+- Fox size: 1750168 bytes
 - ratio Fox/TGA: 5%
-- ratio Fox/PNG: 57%
+- ratio Fox/PNG: 58%
 
 ### qoi_screenshots_web/microsoft.com.png
 
 - TGA size: 17478674 bytes
 - PNG size: 1990915 bytes
-- Fox size: 1229994 bytes
+- Fox size: 1232976 bytes
 - ratio Fox/TGA: 7%
 - ratio Fox/PNG: 61%
 
@@ -517,7 +517,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 7685018 bytes
 - PNG size: 266815 bytes
-- Fox size: 162079 bytes
+- Fox size: 162321 bytes
 - ratio Fox/TGA: 2%
 - ratio Fox/PNG: 60%
 
@@ -525,7 +525,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 30356578 bytes
 - PNG size: 3331485 bytes
-- Fox size: 1892152 bytes
+- Fox size: 1896203 bytes
 - ratio Fox/TGA: 6%
 - ratio Fox/PNG: 56%
 
@@ -533,7 +533,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 108543102 bytes
 - PNG size: 6001461 bytes
-- Fox size: 6081261 bytes
+- Fox size: 6090690 bytes
 - ratio Fox/TGA: 5%
 - ratio Fox/PNG: 101%
 
@@ -541,15 +541,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 42058034 bytes
 - PNG size: 3825292 bytes
-- Fox size: 2177378 bytes
+- Fox size: 2183971 bytes
 - ratio Fox/TGA: 5%
-- ratio Fox/PNG: 56%
+- ratio Fox/PNG: 57%
 
 ### qoi_screenshots_web/stripe.com.png
 
 - TGA size: 34678974 bytes
 - PNG size: 1118955 bytes
-- Fox size: 993641 bytes
+- Fox size: 995139 bytes
 - ratio Fox/TGA: 2%
 - ratio Fox/PNG: 88%
 
@@ -557,7 +557,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 38356434 bytes
 - PNG size: 1335714 bytes
-- Fox size: 981126 bytes
+- Fox size: 981924 bytes
 - ratio Fox/TGA: 2%
 - ratio Fox/PNG: 73%
 
@@ -567,23 +567,23 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4338418 bytes
 - PNG size: 1616664 bytes
-- Fox size: 1452039 bytes
+- Fox size: 1456598 bytes
 - ratio Fox/TGA: 33%
-- ratio Fox/PNG: 89%
+- ratio Fox/PNG: 90%
 
 ### qoi_photo_wikipedia/002.png
 
 - TGA size: 4062258 bytes
 - PNG size: 1713213 bytes
-- Fox size: 1662567 bytes
-- ratio Fox/TGA: 40%
+- Fox size: 1667551 bytes
+- ratio Fox/TGA: 41%
 - ratio Fox/PNG: 97%
 
 ### qoi_photo_wikipedia/003.png
 
 - TGA size: 4193138 bytes
 - PNG size: 1525572 bytes
-- Fox size: 1526374 bytes
+- Fox size: 1530380 bytes
 - ratio Fox/TGA: 36%
 - ratio Fox/PNG: 100%
 
@@ -591,15 +591,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4078386 bytes
 - PNG size: 2289144 bytes
-- Fox size: 2013848 bytes
+- Fox size: 2018322 bytes
 - ratio Fox/TGA: 49%
-- ratio Fox/PNG: 87%
+- ratio Fox/PNG: 88%
 
 ### qoi_photo_wikipedia/005.png
 
 - TGA size: 4008210 bytes
 - PNG size: 2122983 bytes
-- Fox size: 2033921 bytes
+- Fox size: 2037568 bytes
 - ratio Fox/TGA: 50%
 - ratio Fox/PNG: 95%
 
@@ -607,7 +607,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 5256594 bytes
 - PNG size: 2246045 bytes
-- Fox size: 1990704 bytes
+- Fox size: 1994738 bytes
 - ratio Fox/TGA: 37%
 - ratio Fox/PNG: 88%
 
@@ -615,7 +615,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 3978258 bytes
 - PNG size: 1926046 bytes
-- Fox size: 1643045 bytes
+- Fox size: 1647146 bytes
 - ratio Fox/TGA: 41%
 - ratio Fox/PNG: 85%
 
@@ -623,7 +623,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 3953682 bytes
 - PNG size: 1344960 bytes
-- Fox size: 1297348 bytes
+- Fox size: 1301373 bytes
 - ratio Fox/TGA: 32%
 - ratio Fox/PNG: 96%
 
@@ -631,15 +631,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4021266 bytes
 - PNG size: 1762007 bytes
-- Fox size: 1531390 bytes
+- Fox size: 1535812 bytes
 - ratio Fox/TGA: 38%
-- ratio Fox/PNG: 86%
+- ratio Fox/PNG: 87%
 
 ### qoi_photo_wikipedia/010.png
 
 - TGA size: 3696274 bytes
 - PNG size: 1804339 bytes
-- Fox size: 1737635 bytes
+- Fox size: 1741450 bytes
 - ratio Fox/TGA: 47%
 - ratio Fox/PNG: 96%
 
@@ -647,15 +647,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4704978 bytes
 - PNG size: 1794310 bytes
-- Fox size: 1882646 bytes
+- Fox size: 1887761 bytes
 - ratio Fox/TGA: 40%
-- ratio Fox/PNG: 104%
+- ratio Fox/PNG: 105%
 
 ### qoi_photo_wikipedia/012.png
 
 - TGA size: 3865650 bytes
 - PNG size: 2170739 bytes
-- Fox size: 2098143 bytes
+- Fox size: 2101710 bytes
 - ratio Fox/TGA: 54%
 - ratio Fox/PNG: 96%
 
@@ -663,7 +663,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4770706 bytes
 - PNG size: 2391936 bytes
-- Fox size: 2158396 bytes
+- Fox size: 2162882 bytes
 - ratio Fox/TGA: 45%
 - ratio Fox/PNG: 90%
 
@@ -671,7 +671,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 3962386 bytes
 - PNG size: 1755987 bytes
-- Fox size: 1817690 bytes
+- Fox size: 1822308 bytes
 - ratio Fox/TGA: 45%
 - ratio Fox/PNG: 103%
 
@@ -679,7 +679,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 3960018 bytes
 - PNG size: 1929422 bytes
-- Fox size: 1646336 bytes
+- Fox size: 1650174 bytes
 - ratio Fox/TGA: 41%
 - ratio Fox/PNG: 85%
 
@@ -687,7 +687,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 3717010 bytes
 - PNG size: 1009685 bytes
-- Fox size: 1122061 bytes
+- Fox size: 1125018 bytes
 - ratio Fox/TGA: 30%
 - ratio Fox/PNG: 111%
 
@@ -695,7 +695,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4544898 bytes
 - PNG size: 1662824 bytes
-- Fox size: 1732928 bytes
+- Fox size: 1737954 bytes
 - ratio Fox/TGA: 38%
 - ratio Fox/PNG: 104%
 
@@ -703,7 +703,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 5237890 bytes
 - PNG size: 2152214 bytes
-- Fox size: 2054732 bytes
+- Fox size: 2060927 bytes
 - ratio Fox/TGA: 39%
 - ratio Fox/PNG: 95%
 
@@ -711,7 +711,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4804818 bytes
 - PNG size: 1747944 bytes
-- Fox size: 1986282 bytes
+- Fox size: 1992541 bytes
 - ratio Fox/TGA: 41%
 - ratio Fox/PNG: 113%
 
@@ -719,7 +719,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4478994 bytes
 - PNG size: 1961459 bytes
-- Fox size: 1883013 bytes
+- Fox size: 1887906 bytes
 - ratio Fox/TGA: 42%
 - ratio Fox/PNG: 96%
 
@@ -727,7 +727,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 5057490 bytes
 - PNG size: 2212986 bytes
-- Fox size: 2155208 bytes
+- Fox size: 2161229 bytes
 - ratio Fox/TGA: 42%
 - ratio Fox/PNG: 97%
 
@@ -735,23 +735,23 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 3775698 bytes
 - PNG size: 2002984 bytes
-- Fox size: 1919499 bytes
+- Fox size: 1923245 bytes
 - ratio Fox/TGA: 50%
-- ratio Fox/PNG: 95%
+- ratio Fox/PNG: 96%
 
 ### qoi_photo_wikipedia/023.png
 
 - TGA size: 4478994 bytes
 - PNG size: 1527956 bytes
-- Fox size: 1555155 bytes
+- Fox size: 1561105 bytes
 - ratio Fox/TGA: 34%
-- ratio Fox/PNG: 101%
+- ratio Fox/PNG: 102%
 
 ### qoi_photo_wikipedia/024.png
 
 - TGA size: 4450962 bytes
 - PNG size: 1965768 bytes
-- Fox size: 1673280 bytes
+- Fox size: 1677284 bytes
 - ratio Fox/TGA: 37%
 - ratio Fox/PNG: 85%
 
@@ -759,15 +759,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 5141170 bytes
 - PNG size: 2241618 bytes
-- Fox size: 2035649 bytes
+- Fox size: 2040503 bytes
 - ratio Fox/TGA: 39%
-- ratio Fox/PNG: 90%
+- ratio Fox/PNG: 91%
 
 ### qoi_photo_wikipedia/026.png
 
 - TGA size: 4160018 bytes
 - PNG size: 2110391 bytes
-- Fox size: 1990186 bytes
+- Fox size: 1994266 bytes
 - ratio Fox/TGA: 47%
 - ratio Fox/PNG: 94%
 
@@ -775,7 +775,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4469778 bytes
 - PNG size: 2039457 bytes
-- Fox size: 1908021 bytes
+- Fox size: 1913519 bytes
 - ratio Fox/TGA: 42%
 - ratio Fox/PNG: 93%
 
@@ -783,7 +783,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4021266 bytes
 - PNG size: 1661136 bytes
-- Fox size: 1962628 bytes
+- Fox size: 1965572 bytes
 - ratio Fox/TGA: 48%
 - ratio Fox/PNG: 118%
 
@@ -791,7 +791,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4478994 bytes
 - PNG size: 2072449 bytes
-- Fox size: 2119497 bytes
+- Fox size: 2123324 bytes
 - ratio Fox/TGA: 47%
 - ratio Fox/PNG: 102%
 
@@ -799,7 +799,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 5138578 bytes
 - PNG size: 1864601 bytes
-- Fox size: 1895837 bytes
+- Fox size: 1900050 bytes
 - ratio Fox/TGA: 36%
 - ratio Fox/PNG: 101%
 
@@ -807,7 +807,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4127778 bytes
 - PNG size: 1920302 bytes
-- Fox size: 1832027 bytes
+- Fox size: 1835345 bytes
 - ratio Fox/TGA: 44%
 - ratio Fox/PNG: 95%
 
@@ -815,15 +815,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4478994 bytes
 - PNG size: 1358489 bytes
-- Fox size: 1297344 bytes
-- ratio Fox/TGA: 28%
+- Fox size: 1301129 bytes
+- ratio Fox/TGA: 29%
 - ratio Fox/PNG: 95%
 
 ### qoi_photo_wikipedia/033.png
 
 - TGA size: 3824658 bytes
 - PNG size: 1562915 bytes
-- Fox size: 1502984 bytes
+- Fox size: 1507902 bytes
 - ratio Fox/TGA: 39%
 - ratio Fox/PNG: 96%
 
@@ -831,7 +831,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 3898642 bytes
 - PNG size: 1520514 bytes
-- Fox size: 1497974 bytes
+- Fox size: 1501462 bytes
 - ratio Fox/TGA: 38%
 - ratio Fox/PNG: 98%
 
@@ -839,7 +839,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4481074 bytes
 - PNG size: 1610751 bytes
-- Fox size: 1697714 bytes
+- Fox size: 1702286 bytes
 - ratio Fox/TGA: 37%
 - ratio Fox/PNG: 105%
 
@@ -847,7 +847,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 3727170 bytes
 - PNG size: 1806256 bytes
-- Fox size: 1742598 bytes
+- Fox size: 1746578 bytes
 - ratio Fox/TGA: 46%
 - ratio Fox/PNG: 96%
 
@@ -855,7 +855,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4478994 bytes
 - PNG size: 1797482 bytes
-- Fox size: 1997572 bytes
+- Fox size: 2002238 bytes
 - ratio Fox/TGA: 44%
 - ratio Fox/PNG: 111%
 
@@ -863,39 +863,39 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 3840018 bytes
 - PNG size: 1085056 bytes
-- Fox size: 1113490 bytes
-- ratio Fox/TGA: 28%
-- ratio Fox/PNG: 102%
+- Fox size: 1117731 bytes
+- ratio Fox/TGA: 29%
+- ratio Fox/PNG: 103%
 
 ### qoi_photo_wikipedia/039.png
 
 - TGA size: 4478994 bytes
 - PNG size: 1957790 bytes
-- Fox size: 1857557 bytes
+- Fox size: 1861690 bytes
 - ratio Fox/TGA: 41%
-- ratio Fox/PNG: 94%
+- ratio Fox/PNG: 95%
 
 ### qoi_photo_wikipedia/040.png
 
 - TGA size: 4478994 bytes
 - PNG size: 1638402 bytes
-- Fox size: 1636069 bytes
+- Fox size: 1641774 bytes
 - ratio Fox/TGA: 36%
-- ratio Fox/PNG: 99%
+- ratio Fox/PNG: 100%
 
 ### qoi_photo_wikipedia/041.png
 
 - TGA size: 4028882 bytes
 - PNG size: 1300001 bytes
-- Fox size: 1233748 bytes
+- Fox size: 1237629 bytes
 - ratio Fox/TGA: 30%
-- ratio Fox/PNG: 94%
+- ratio Fox/PNG: 95%
 
 ### qoi_photo_wikipedia/042.png
 
 - TGA size: 4680018 bytes
 - PNG size: 1826109 bytes
-- Fox size: 1759399 bytes
+- Fox size: 1765222 bytes
 - ratio Fox/TGA: 37%
 - ratio Fox/PNG: 96%
 
@@ -903,7 +903,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 5256594 bytes
 - PNG size: 2035095 bytes
-- Fox size: 1772822 bytes
+- Fox size: 1779672 bytes
 - ratio Fox/TGA: 33%
 - ratio Fox/PNG: 87%
 
@@ -911,7 +911,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 5072274 bytes
 - PNG size: 1829920 bytes
-- Fox size: 1779302 bytes
+- Fox size: 1784672 bytes
 - ratio Fox/TGA: 35%
 - ratio Fox/PNG: 97%
 
@@ -919,15 +919,15 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4478994 bytes
 - PNG size: 1297590 bytes
-- Fox size: 1491723 bytes
+- Fox size: 1496341 bytes
 - ratio Fox/TGA: 33%
-- ratio Fox/PNG: 114%
+- ratio Fox/PNG: 115%
 
 ### qoi_photo_wikipedia/046.png
 
 - TGA size: 3694098 bytes
 - PNG size: 1679421 bytes
-- Fox size: 1699955 bytes
+- Fox size: 1704455 bytes
 - ratio Fox/TGA: 46%
 - ratio Fox/PNG: 101%
 
@@ -935,7 +935,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4353682 bytes
 - PNG size: 1736783 bytes
-- Fox size: 1621701 bytes
+- Fox size: 1627158 bytes
 - ratio Fox/TGA: 37%
 - ratio Fox/PNG: 93%
 
@@ -943,7 +943,7 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 3753618 bytes
 - PNG size: 1843434 bytes
-- Fox size: 1604400 bytes
+- Fox size: 1608652 bytes
 - ratio Fox/TGA: 42%
 - ratio Fox/PNG: 87%
 
@@ -951,6 +951,6 @@ TGAs were converted from the PNGs using uncompressed 32 bit true-color format to
 
 - TGA size: 4622418 bytes
 - PNG size: 1906602 bytes
-- Fox size: 2142447 bytes
+- Fox size: 2148121 bytes
 - ratio Fox/TGA: 46%
 - ratio Fox/PNG: 112%

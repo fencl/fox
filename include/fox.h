@@ -14,7 +14,7 @@ struct fox {
     void *user;
 
     // zero-initialized
-    unsigned long lower, upper, input;
+    unsigned int lower: 16, :0, upper: 16, :0, input: 16;
     struct fox_argb cache[0x80], color;
     unsigned char run;
     signed char model[0x4FC];

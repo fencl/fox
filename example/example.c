@@ -158,7 +158,6 @@ static int main_decode(int argc, char **argv) {
     }
 
     res = 0;
-
     fclose(out);
     err1: fclose(in);
     err0: return res;
