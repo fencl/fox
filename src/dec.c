@@ -1,16 +1,17 @@
 #include <fox.h>
 
 static void fox_in(struct fox *fox) {
-    fox->input <<= 8, fox->lower <<= 8, fox->upper <<= 8;
-    fox->input |= fox->callback(0, fox->user);
+    fox->input = (fox->input & 0xFFFF) << 8 | fox->callback(0, fox->user);
+    fox->lower = (fox->lower & 0xFFFF) << 8;
+    fox->upper = (fox->upper & 0xFFFF) << 8;
 }
 
 static unsigned int fox_dec_bit(struct fox *fox, unsigned int ctx) {
-    while ((fox->lower ^ fox->upper) >= 0xFF00u) fox_in(fox);
+    while ((fox->lower ^ fox->upper) >= 0xFF0000) fox_in(fox);
 
-    signed char *mod = fox->model + ctx, prb = *mod;
-    unsigned int rng = 0xFFFFu - fox->lower - fox->upper;
-    unsigned int mid = (unsigned long) rng * (prb + 128) >> 8;
+    signed   char *mod = fox->model + ctx, prb = *mod;
+    unsigned long  rng = 0xFFFFFF - fox->lower - fox->upper;
+    unsigned long  mid = rng * (prb + 128) >> 8;
 
     return fox->input <= fox->lower + mid
         ? (fox->upper += rng - mid, *mod = prb + ((128 - prb) >> 3), 1)
@@ -24,20 +25,20 @@ static unsigned int fox_dec(struct fox *fox, unsigned int mod) {
 }
 
 void fox_open(struct fox *fox) {
-    fox_in(fox), fox_in(fox);
+    fox_in(fox), fox_in(fox), fox_in(fox);
 }
 
 struct fox_argb fox_read(struct fox *fox) {
     if (fox->run) return --fox->run, fox->color;
 
-    unsigned int sym = fox_dec(fox, 0x0009);
+    unsigned int sym = fox_dec(fox, 0x0009), a, r, g, b;
     if (sym >= 384) return fox->color = fox->cache[sym - 384];
     if (sym >= 256) return fox->run = sym - 256, fox->color;
 
-    unsigned int g = fox->color.g += sym;
-    unsigned int r = fox->color.r += fox_dec(fox, 0x1FF8) + sym;
-    unsigned int b = fox->color.b += fox_dec(fox, 0x2FE8) + sym;
-    unsigned int a = fox->color.a += fox_dec(fox, 0x3FD8);
+    g = fox->color.g = 0xFF & (fox->color.g + sym);
+    r = fox->color.r = 0xFF & (fox->color.r + fox_dec(fox, 0x1FF8) + sym);
+    b = fox->color.b = 0xFF & (fox->color.b + fox_dec(fox, 0x2FE8) + sym);
+    a = fox->color.a = 0xFF & (fox->color.a + fox_dec(fox, 0x3FD8));
 
     return fox->cache[(r + g * 3 + b * 5 + a * 7) & 0x7F] = fox->color;
 }

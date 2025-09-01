@@ -6,7 +6,7 @@
 extern "C" {
 #endif
 
-struct fox_argb { unsigned int a: 8, r: 8, g: 8, b: 8; };
+struct fox_argb { unsigned char a, r, g, b; };
 
 struct fox {
     // user-defined
@@ -14,9 +14,9 @@ struct fox {
     void *user;
 
     // zero-initialized
-    unsigned int lower: 16, :0, upper: 16, :0, input: 16;
+    unsigned long lower, upper, input;
+    unsigned int run;
     struct fox_argb cache[0x80], color;
-    unsigned char run;
     signed char model[0x4FC];
 };
 
