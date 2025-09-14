@@ -1,14 +1,14 @@
 # Fox
 
-Lossless image format and encoder/decoder in C
+Lossless image codec.
 
-Fox is a lossless image format aiming to provide a satisfying compression ratio with a tiny encoder/decoder.  
+Fox is a tiny lossless image codec aiming to provide a satisfying compression ratio.  
 Fox only encodes a stream of 32bit rgba pixels (8-bit per channel), includes no additional metadata like width/height.  
 This makes fox a good choice for embedding into a custom container format.
 
 ## Tiny
 
-Both encoder and decoder are currenty written in under 55 LOC.
+Both encoder and decoder are currenty written in under 48 LOC.
 
 ## Dependencies
 
@@ -28,11 +28,6 @@ See the [benchmark](BENCHMARK.md) for size comparison on few image sets.
 Each pixel is encoded/decoded in O(1) time. Therefore the whole image is encoded in O(n) time.  
 The actual speed is not as impressive, mainly because each symbol (color, hash index or run length) is encoded bit by bit.
 
-## Space complexity
-
-Fox compresses images in a streaming fashion with O(1) space complexity (acually < 2k bytes).  
-This means that there is no limit on the image size.
-
 ## Building
 
 No build system is currently included as it is not necessary.  
@@ -41,6 +36,8 @@ Simply add `include` folder to your header paths and compile/link `src/enc.c` an
 ## Usage
 
 ### Encoder/Decoder
+
+Colors are represented by 32 bit integer as 0xAARRGGBB.
 
 Both encoder and decoder share the same data structure.  
 The structure has to be zero initialized except for user-provided callback and a user pointer.  
@@ -73,7 +70,7 @@ Do not use `fox_open` - it is only used by the decoder.
 For each pixel call:
 
 ```c
-// void fox_write(struct fox *encoder, struct fox_argb color);
+// void fox_write(struct fox *encoder, unsigned long color);
 fox_write(&example, color);
 ```
 
@@ -98,8 +95,8 @@ fox_open(&example);
 For each pixel call:
 
 ```c
-// struct fox_argb fox_read(struct fox *decoder);
-struct fox_argb color = fox_read(&example);
+// unsigned long fox_read(struct fox *decoder);
+unsigned long color = fox_read(&example);
 ```
 
 Do not use `fox_close` - it is only used by the encoder.
@@ -109,7 +106,7 @@ Do not use `fox_close` - it is only used by the encoder.
 Example is provided to show encoding and decoding.  
 It converts TGA image to Fox and Fox to TGA.  
 Only supported TGA formats are uncompressed 24 bit RGB, 32 bit RGBA and 8 bit grayscale.  
-The fox image is saved with minimal header.
+The fox image is saved with a minimal header.
 
 To build the example there are two scripts `build.sh` and `build.bat` to build the example using cc and cl respectively.
 

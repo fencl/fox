@@ -6,50 +6,43 @@ static void fox_out(struct fox *fox) {
     fox->upper = (fox->upper & 0xFFFF) << 8;
 }
 
-static void fox_enc_bit(struct fox *fox, unsigned int bit, unsigned int ctx) {
-    while ((fox->lower ^ fox->upper) >= 0xFF0000) fox_out(fox);
+static void fox_enc(struct fox *fox, unsigned ctx, unsigned n, unsigned sym) {
+    for (unsigned off = 1 << n | sym; n;) {
+        while ((fox->lower ^ fox->upper) >= 0xFF0000) fox_out(fox);
 
-    signed   char *mod = fox->model + ctx, prb = *mod;
-    unsigned long  rng = 0xFFFFFF - fox->lower - fox->upper;
-    unsigned long  mid = rng * (prb + 128) >> 8;
+        signed char *mod = fox->model + ctx + (off >> n) - 1, prb = *mod;
+        unsigned long rng = 0xFFFFFF - fox->lower - fox->upper;
+        unsigned long mid = rng * (prb + 128) >> 8;
 
-    if (bit) fox->upper += rng - mid, *mod = prb + ((128 - prb) >> 3);
-        else fox->lower += mid + 1,   *mod = prb - ((128 + prb) >> 3);
+        sym >> --n & 1
+            ? (fox->upper += rng - mid, *mod = prb + ((128 - prb) >> 3))
+            : (fox->lower += mid + 1,   *mod = prb - ((128 + prb) >> 3));
+    }
 }
 
-static void fox_enc(struct fox *fox, unsigned int mod, unsigned int sym) {
-    unsigned int len = mod & 0xF, ctx = mod >> 4, off = (1 << len | sym) >> 1;
-    while (len--) fox_enc_bit(fox, sym >> len & 1, ctx + (off >> len) - 1);
-}
+void fox_write(struct fox *fox, unsigned long col) {
+    if (fox->color != col) {
+        if (fox->run) fox_enc(fox, 0x000, 9, 255 + fox->run), fox->run = 0;
 
-static void fox_flush_run(struct fox *fox) {
-    fox_enc(fox, 0x0009, 255 + fox->run), fox->run = 0;
-}
+        unsigned hash = ((col * 0x57B70101) >> 25) & 0x7F;
+        if (fox->cache[hash] != col) {
+            fox->cache[hash] = col;
 
-void fox_write(struct fox *fox, struct fox_argb color) {
-    unsigned int a = color.a, r = color.r, g = color.g, b = color.b;
-    struct fox_argb prev = fox->color;
+            unsigned long prev = fox->color, sym = 0xFF & (col - prev);
+            fox_enc(fox, 0x000, 9, sym);
+            fox_enc(fox, 0x1FF, 8, 0xFF & ((col >>  8) - (prev >>  8) - sym));
+            fox_enc(fox, 0x2FE, 8, 0xFF & ((col >> 16) - (prev >> 16) - sym));
+            fox_enc(fox, 0x3FD, 8, 0xFF & ((col >> 24) - (prev >> 24)));
 
-    if (prev.a != a || prev.r != r || prev.g != g || prev.b != b) {
-        if (fox->run) fox_flush_run(fox);
+        } else fox_enc(fox, 0x000, 9, 384 + hash);
 
-        unsigned int hash = (r + g * 3 + b * 5 + a * 7) & 0x7F;
-        struct fox_argb cache = fox->cache[hash];
-
-        if (cache.a != a || cache.r != r || cache.g != g || cache.b != b) {
-            fox_enc(fox, 0x0009, 0xFF & (g -= prev.g));
-            fox_enc(fox, 0x1FF8, 0xFF & (r -= prev.r + g));
-            fox_enc(fox, 0x2FE8, 0xFF & (b -= prev.b + g));
-            fox_enc(fox, 0x3FD8, 0xFF & (a -= prev.a));
-
-            fox->cache[hash] = color;
-        } else fox_enc(fox, 0x0009, 384 + hash);
-
-        fox->color = color;
-    } else if (++fox->run == 128) fox_flush_run(fox);
+        fox->color = col;
+    } else if (++fox->run == 128) {
+        fox_enc(fox, 0x000, 9, 255 + fox->run), fox->run = 0;
+    }
 }
 
 void fox_close(struct fox *fox) {
-    if (fox->run) fox_flush_run(fox);
+    if (fox->run) fox_enc(fox, 0x000, 9, 255 + fox->run);
     fox_out(fox), fox_out(fox), fox_out(fox);
 }

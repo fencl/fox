@@ -6,39 +6,38 @@ static void fox_in(struct fox *fox) {
     fox->upper = (fox->upper & 0xFFFF) << 8;
 }
 
-static unsigned int fox_dec_bit(struct fox *fox, unsigned int ctx) {
-    while ((fox->lower ^ fox->upper) >= 0xFF0000) fox_in(fox);
+static unsigned fox_dec(struct fox *fox, unsigned ctx, unsigned n) {
+    for (unsigned sym = 1, top = 1 << n;;) {
+        if (sym >= top) return sym - top;
 
-    signed   char *mod = fox->model + ctx, prb = *mod;
-    unsigned long  rng = 0xFFFFFF - fox->lower - fox->upper;
-    unsigned long  mid = rng * (prb + 128) >> 8;
+        while ((fox->lower ^ fox->upper) >= 0xFF0000) fox_in(fox);
 
-    return fox->input <= fox->lower + mid
-        ? (fox->upper += rng - mid, *mod = prb + ((128 - prb) >> 3), 1)
-        : (fox->lower += mid + 1,   *mod = prb - ((128 + prb) >> 3), 0);
-}
+        signed char *mod = fox->model + ctx + sym - 1, prb = *mod;
+        unsigned long rng = 0xFFFFFF - fox->lower - fox->upper;
+        unsigned long mid = rng * (prb + 128) >> 8;
 
-static unsigned int fox_dec(struct fox *fox, unsigned int mod) {
-    unsigned int sym = 1, len = mod & 0xF, ctx = mod >> 4, top = 1 << len;
-    while (sym < top) sym = sym << 1 | fox_dec_bit(fox, ctx + sym - 1);
-    return sym - top;
+        sym <<= 1;
+        sym |= fox->input <= fox->lower + mid
+            ? (fox->upper += rng - mid, *mod = prb + ((128 - prb) >> 3), 1)
+            : (fox->lower += mid + 1,   *mod = prb - ((128 + prb) >> 3), 0);
+    }
 }
 
 void fox_open(struct fox *fox) {
     fox_in(fox), fox_in(fox), fox_in(fox);
 }
 
-struct fox_argb fox_read(struct fox *fox) {
+unsigned long fox_read(struct fox *fox) {
     if (fox->run) return --fox->run, fox->color;
 
-    unsigned int sym = fox_dec(fox, 0x0009), a, r, g, b;
+    unsigned sym = fox_dec(fox, 0x000, 9);
     if (sym >= 384) return fox->color = fox->cache[sym - 384];
     if (sym >= 256) return fox->run = sym - 256, fox->color;
 
-    g = fox->color.g = 0xFF & (fox->color.g + sym);
-    r = fox->color.r = 0xFF & (fox->color.r + fox_dec(fox, 0x1FF8) + sym);
-    b = fox->color.b = 0xFF & (fox->color.b + fox_dec(fox, 0x2FE8) + sym);
-    a = fox->color.a = 0xFF & (fox->color.a + fox_dec(fox, 0x3FD8));
+    unsigned long prev = fox->color, col = 0xFF & (prev + sym);
+    col |= (0xFF & ((prev >>  8) + fox_dec(fox, 0x1FF, 8) + sym)) <<  8;
+    col |= (0xFF & ((prev >> 16) + fox_dec(fox, 0x2FE, 8) + sym)) << 16;
+    col |= (0xFF & ((prev >> 24) + fox_dec(fox, 0x3FD, 8)      )) << 24;
 
-    return fox->cache[(r + g * 3 + b * 5 + a * 7) & 0x7F] = fox->color;
+    return fox->cache[((col * 0x57B70101) >> 25) & 0x7F] = fox->color = col;
 }
