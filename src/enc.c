@@ -26,7 +26,6 @@ void fox_write(struct fox *fox, unsigned long col) {
 
         unsigned hash = ((col * 0x57B70101) >> 25) & 0x7F;
         if (fox->cache[hash] != col) {
-            fox->cache[hash] = col;
 
             unsigned long prev = fox->color, sym = 0xFF & (col - prev);
             fox_enc(fox, 0x000, 9, sym);
@@ -34,6 +33,7 @@ void fox_write(struct fox *fox, unsigned long col) {
             fox_enc(fox, 0x2FE, 8, 0xFF & ((col >> 16) - (prev >> 16) - sym));
             fox_enc(fox, 0x3FD, 8, 0xFF & ((col >> 24) - (prev >> 24)));
 
+            fox->cache[hash] = col;
         } else fox_enc(fox, 0x000, 9, 384 + hash);
 
         fox->color = col;
