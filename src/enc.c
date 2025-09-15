@@ -10,13 +10,13 @@ static void fox_enc(struct fox *fox, unsigned ctx, unsigned n, unsigned sym) {
     for (unsigned off = 1 << n | sym; n;) {
         while ((fox->lower ^ fox->upper) >= 0xFF0000) fox_out(fox);
 
-        signed char *mod = fox->model + ctx + (off >> n) - 1, prb = *mod;
+        signed char *cell = fox->model + ctx + (off >> n) - 1, prb = *cell;
         unsigned long rng = 0xFFFFFF - fox->lower - fox->upper;
         unsigned long mid = rng * (prb + 128) >> 8;
 
         sym >> --n & 1
-            ? (fox->upper += rng - mid, *mod = prb + ((128 - prb) >> 3))
-            : (fox->lower += mid + 1,   *mod = prb - ((128 + prb) >> 3));
+            ? (fox->upper += rng - mid, *cell = prb + ((128 - prb) >> 3))
+            : (fox->lower += mid + 1,   *cell = prb - ((128 + prb) >> 3));
     }
 }
 

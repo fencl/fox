@@ -12,14 +12,13 @@ static unsigned fox_dec(struct fox *fox, unsigned ctx, unsigned n) {
 
         while ((fox->lower ^ fox->upper) >= 0xFF0000) fox_in(fox);
 
-        signed char *mod = fox->model + ctx + sym - 1, prb = *mod;
+        signed char *cell = fox->model + ctx + sym - 1, prb = *cell;
         unsigned long rng = 0xFFFFFF - fox->lower - fox->upper;
         unsigned long mid = rng * (prb + 128) >> 8;
 
-        sym <<= 1;
-        sym |= fox->input <= fox->lower + mid
-            ? (fox->upper += rng - mid, *mod = prb + ((128 - prb) >> 3), 1)
-            : (fox->lower += mid + 1,   *mod = prb - ((128 + prb) >> 3), 0);
+        sym <<= 1, sym |= fox->input <= fox->lower + mid
+            ? (fox->upper += rng - mid, *cell = prb + ((128 - prb) >> 3), 1)
+            : (fox->lower += mid + 1,   *cell = prb - ((128 + prb) >> 3), 0);
     }
 }
 
